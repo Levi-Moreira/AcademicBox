@@ -39,6 +39,9 @@
                                 <rect key="frame" x="8" y="388" width="297" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Entrar"/>
+                                <connections>
+                                    <action selector="didTapSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2do-NB-6jm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fv-OR-47q">
                                 <rect key="frame" x="0.0" y="430" width="313" height="35"/>
@@ -59,6 +62,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="98J-WS-9ru"/>
                     <connections>
+                        <outlet property="tvEmail" destination="pjy-YY-FkY" id="0w4-gk-6ti"/>
+                        <outlet property="tvPassword" destination="9ep-cE-HeT" id="Gzw-5t-omQ"/>
                         <segue destination="IVw-wi-TPq" kind="push" id="aVr-tw-mBc"/>
                     </connections>
                 </viewController>
