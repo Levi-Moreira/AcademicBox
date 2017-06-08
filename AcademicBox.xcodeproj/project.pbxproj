@@ -16,6 +16,8 @@
 		A21030601EE5EEDC0026E0D4 /* AcademicBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A210305F1EE5EEDC0026E0D4 /* AcademicBoxTests.swift */; };
 		A210306B1EE5EEDC0026E0D4 /* AcademicBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A210306A1EE5EEDC0026E0D4 /* AcademicBoxUITests.swift */; };
 		A25DA9341EE894D000E1FCFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A25DA9331EE894D000E1FCFD /* GoogleService-Info.plist */; };
+		A27166E81EE9E43000B2AE89 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27166E71EE9E43000B2AE89 /* MainMenuViewController.swift */; };
+		A27166EA1EE9F6A700B2AE89 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A27166E91EE9F6A700B2AE89 /* Menu.storyboard */; };
 		B96447211D52C3B76D01ACCF /* libPods-AcademicBoxUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BCA1FBB623119383FFB15D5 /* libPods-AcademicBoxUITests.a */; };
 		D029032776E7285293D80C39 /* libPods-AcademicBoxTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CE3CCF83A6023E1FB2014A /* libPods-AcademicBoxTests.a */; };
 /* End PBXBuildFile section */
@@ -57,6 +59,8 @@
 		A210306A1EE5EEDC0026E0D4 /* AcademicBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicBoxUITests.swift; sourceTree = "<group>"; };
 		A210306C1EE5EEDC0026E0D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A25DA9331EE894D000E1FCFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A27166E71EE9E43000B2AE89 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		A27166E91EE9F6A700B2AE89 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		A7CE3CCF83A6023E1FB2014A /* libPods-AcademicBoxTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AcademicBoxTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF3B96505C57FD81AEC2C378 /* Pods-AcademicBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcademicBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcademicBox/Pods-AcademicBox.release.xcconfig"; sourceTree = "<group>"; };
 		DE44A26C94FAAC8FD64A6AE6 /* libPods-AcademicBox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AcademicBox.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +137,8 @@
 				A21030511EE5EEDC0026E0D4 /* Assets.xcassets */,
 				A21030531EE5EEDC0026E0D4 /* LaunchScreen.storyboard */,
 				A21030561EE5EEDC0026E0D4 /* Info.plist */,
+				A27166E71EE9E43000B2AE89 /* MainMenuViewController.swift */,
+				A27166E91EE9F6A700B2AE89 /* Menu.storyboard */,
 			);
 			path = AcademicBox;
 			sourceTree = "<group>";
@@ -284,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A27166EA1EE9F6A700B2AE89 /* Menu.storyboard in Resources */,
 				A21030551EE5EEDC0026E0D4 /* LaunchScreen.storyboard in Resources */,
 				A25DA9341EE894D000E1FCFD /* GoogleService-Info.plist in Resources */,
 				A21030521EE5EEDC0026E0D4 /* Assets.xcassets in Resources */,
@@ -450,6 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A27166E81EE9E43000B2AE89 /* MainMenuViewController.swift in Sources */,
 				A210304D1EE5EEDC0026E0D4 /* ViewController.swift in Sources */,
 				A210304B1EE5EEDC0026E0D4 /* AppDelegate.swift in Sources */,
 			);

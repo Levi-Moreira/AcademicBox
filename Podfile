@@ -5,6 +5,7 @@
 
 target 'AcademicBox' do
 pod 'Firebase/Core'
+pod 'Firebase/Auth'
 end
 
 target 'AcademicBoxTests' do

@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ViewController: UIViewController {
 
+    
+    let kFillEmailAlertText = "Preencha seu Email"
+    
+    let kFillPasswordAlertText = "Preencha sua Senha"
+    
+    var handle: AuthStateDidChangeListenerHandle?
     
     @IBOutlet weak var tvEmail: UITextField!
     
@@ -25,27 +32,53 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
+            
+        })
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
     
     @IBAction func didTapSignIn(_ sender: UIButton) {
     
         guard let email = tvEmail.text else {
-            
             return
         }
         
         if email.isEmpty{
-            showDialog(with: "Preencha seu Email")
+            showDialog(with: kFillEmailAlertText)
+            return
         }
         
         guard let password = tvPassword.text else {
-            
             return
         }
         
         if password.isEmpty{
-            showDialog(with: "Preencha sua senha")
+            showDialog(with: kFillPasswordAlertText)
+            return
         }
         
+        signInToFirebase(email: email,password: password)
+        
+        
+        
+    }
+    
+    
+    func signInToFirebase(email: String, password: String){
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            if error == nil {
+                let storyboard = UIStoryboard(name: "Menu", bundle: nil)
+                
+                let VC1 = storyboard.instantiateViewController(withIdentifier: "MainMenuViewController") as! ViewController
+                let navController = UINavigationController(rootViewController: VC1) // Creating a navigation controller with VC1 at the root of the navigation stack.
+                self.present(navController, animated:true, completion: nil)
+            }
+        }
     }
     
     
