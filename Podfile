@@ -8,6 +8,10 @@ pod 'Firebase/Core'
 pod 'Firebase/Auth'
 pod 'FacebookCore'
 pod 'FacebookLogin'
+pod 'FBSDKLoginKit'
+pod 'FBSDKCoreKit'
+pod 'FBSDKShareKit'
+
 
 end
 

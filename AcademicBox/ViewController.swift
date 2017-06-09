@@ -8,7 +8,8 @@
 
 import UIKit
 import Firebase
-import FacebookLogin
+import FBSDKLoginKit
+
 
 class ViewController: UIViewController {
 
@@ -36,6 +37,8 @@ class ViewController: UIViewController {
         view.addSubview(indicator)
         indicator.bringSubview(toFront: view)
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,6 +84,37 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func didTapSignInFacebook(_ sender: UIButton) {
+        
+        let loginManager = FBSDKLoginManager()
+        loginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+            if error == nil {
+                
+                self.indicator.stopAnimating()
+                
+                let storyboard = UIStoryboard(name: "Menu", bundle: nil)
+                
+                let VC1 = storyboard.instantiateViewController(withIdentifier: "MainMenuNavigation") as! UINavigationController
+                
+                let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                
+                Auth.auth().signIn(with: credential) { (user, error) in
+                    
+                }
+                
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.window?.rootViewController = VC1
+            } else {
+                
+                self.indicator.stopAnimating()
+                self.showDialog(with: self.KFillAuthenticationAlertText)
+            }
+        }
+        
+    }
+    
+    
+    
     func signInToFirebase(email: String, password: String){
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if error == nil {
@@ -99,8 +133,10 @@ class ViewController: UIViewController {
                 self.showDialog(with: self.KFillAuthenticationAlertText)
             }
         }
+        
+        
     }
-    
+
     
     func showDialog(with : String){
         let alert = UIAlertController(title: "Atenção", message: with, preferredStyle: UIAlertControllerStyle.alert)
