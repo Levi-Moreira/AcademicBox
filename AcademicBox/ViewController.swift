@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import FirebaseAuth
+import Firebase
+import FacebookLogin
 
 class ViewController: UIViewController {
 

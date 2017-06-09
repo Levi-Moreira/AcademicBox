@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5404E13BD4A83438605F35EA /* libPods-AcademicBox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE44A26C94FAAC8FD64A6AE6 /* libPods-AcademicBox.a */; };
+		8034D059E5ADF236F0BD9063 /* Pods_AcademicBoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B708C9437082ED1938ACB8A1 /* Pods_AcademicBoxTests.framework */; };
+		9BAD0B5B7FC3537323A91DDE /* Pods_AcademicBoxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB92CC1CD4D110CF3AF62109 /* Pods_AcademicBoxUITests.framework */; };
+		9CC73FDAEA8D38A359E4475B /* Pods_AcademicBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADEF10B30481342E2F421F0D /* Pods_AcademicBox.framework */; };
 		A210304B1EE5EEDC0026E0D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A210304A1EE5EEDC0026E0D4 /* AppDelegate.swift */; };
 		A210304D1EE5EEDC0026E0D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A210304C1EE5EEDC0026E0D4 /* ViewController.swift */; };
 		A21030501EE5EEDC0026E0D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A210304E1EE5EEDC0026E0D4 /* Main.storyboard */; };
@@ -18,8 +20,6 @@
 		A25DA9341EE894D000E1FCFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A25DA9331EE894D000E1FCFD /* GoogleService-Info.plist */; };
 		A27166E81EE9E43000B2AE89 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27166E71EE9E43000B2AE89 /* MainMenuViewController.swift */; };
 		A27166EA1EE9F6A700B2AE89 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A27166E91EE9F6A700B2AE89 /* Menu.storyboard */; };
-		B96447211D52C3B76D01ACCF /* libPods-AcademicBoxUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BCA1FBB623119383FFB15D5 /* libPods-AcademicBoxUITests.a */; };
-		D029032776E7285293D80C39 /* libPods-AcademicBoxTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CE3CCF83A6023E1FB2014A /* libPods-AcademicBoxTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2BCA1FBB623119383FFB15D5 /* libPods-AcademicBoxUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AcademicBoxUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC366DAEDAD6AF5BFEBF3A6 /* Pods-AcademicBoxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcademicBoxTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcademicBoxTests/Pods-AcademicBoxTests.release.xcconfig"; sourceTree = "<group>"; };
 		58F1F8BD4F73BEA79C53D5CA /* Pods-AcademicBoxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcademicBoxTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcademicBoxTests/Pods-AcademicBoxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		73D2E151FD6DD241E1320FFF /* Pods-AcademicBoxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcademicBoxUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcademicBoxUITests/Pods-AcademicBoxUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -61,9 +60,10 @@
 		A25DA9331EE894D000E1FCFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A27166E71EE9E43000B2AE89 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		A27166E91EE9F6A700B2AE89 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
-		A7CE3CCF83A6023E1FB2014A /* libPods-AcademicBoxTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AcademicBoxTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB92CC1CD4D110CF3AF62109 /* Pods_AcademicBoxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcademicBoxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADEF10B30481342E2F421F0D /* Pods_AcademicBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcademicBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF3B96505C57FD81AEC2C378 /* Pods-AcademicBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcademicBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcademicBox/Pods-AcademicBox.release.xcconfig"; sourceTree = "<group>"; };
-		DE44A26C94FAAC8FD64A6AE6 /* libPods-AcademicBox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AcademicBox.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B708C9437082ED1938ACB8A1 /* Pods_AcademicBoxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcademicBoxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB04FFFAF16DB672EB2EA289 /* Pods-AcademicBoxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcademicBoxUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcademicBoxUITests/Pods-AcademicBoxUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,7 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5404E13BD4A83438605F35EA /* libPods-AcademicBox.a in Frameworks */,
+				9CC73FDAEA8D38A359E4475B /* Pods_AcademicBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D029032776E7285293D80C39 /* libPods-AcademicBoxTests.a in Frameworks */,
+				8034D059E5ADF236F0BD9063 /* Pods_AcademicBoxTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B96447211D52C3B76D01ACCF /* libPods-AcademicBoxUITests.a in Frameworks */,
+				9BAD0B5B7FC3537323A91DDE /* Pods_AcademicBoxUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,9 +98,9 @@
 		9D96F5A66D32AA2A47EDC6B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DE44A26C94FAAC8FD64A6AE6 /* libPods-AcademicBox.a */,
-				A7CE3CCF83A6023E1FB2014A /* libPods-AcademicBoxTests.a */,
-				2BCA1FBB623119383FFB15D5 /* libPods-AcademicBoxUITests.a */,
+				ADEF10B30481342E2F421F0D /* Pods_AcademicBox.framework */,
+				B708C9437082ED1938ACB8A1 /* Pods_AcademicBoxTests.framework */,
+				AB92CC1CD4D110CF3AF62109 /* Pods_AcademicBoxUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
