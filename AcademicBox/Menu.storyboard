@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="P0T-7Y-2ae">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="P0T-7Y-2ae">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Jx7-JU-exX">
             <objects>
-                <navigationController id="P0T-7Y-2ae" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainMenuNavigation" id="P0T-7Y-2ae" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="06U-E3-HJf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

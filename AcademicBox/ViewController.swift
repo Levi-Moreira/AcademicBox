@@ -16,7 +16,11 @@ class ViewController: UIViewController {
     
     let kFillPasswordAlertText = "Preencha sua Senha"
     
+    let KFillAuthenticationAlertText = "Email não exite!"
+    
     var handle: AuthStateDidChangeListenerHandle?
+    
+    var indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     
     @IBOutlet weak var tvEmail: UITextField!
     
@@ -25,6 +29,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        indicator.frame = CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0)
+        indicator.center = view.center
+        view.addSubview(indicator)
+        indicator.bringSubview(toFront: view)
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +54,7 @@ class ViewController: UIViewController {
     
     @IBAction func didTapSignIn(_ sender: UIButton) {
     
+        indicator.startAnimating()
         guard let email = tvEmail.text else {
             return
         }
@@ -72,11 +83,19 @@ class ViewController: UIViewController {
     func signInToFirebase(email: String, password: String){
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if error == nil {
+                
+                self.indicator.stopAnimating()
+                
                 let storyboard = UIStoryboard(name: "Menu", bundle: nil)
                 
-                let VC1 = storyboard.instantiateViewController(withIdentifier: "MainMenuViewController") as! ViewController
-                let navController = UINavigationController(rootViewController: VC1) // Creating a navigation controller with VC1 at the root of the navigation stack.
-                self.present(navController, animated:true, completion: nil)
+                let VC1 = storyboard.instantiateViewController(withIdentifier: "MainMenuNavigation") as! UINavigationController
+                
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.window?.rootViewController = VC1
+            } else {
+                
+                self.indicator.stopAnimating()
+                self.showDialog(with: self.KFillAuthenticationAlertText)
             }
         }
     }
