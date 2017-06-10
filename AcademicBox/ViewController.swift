@@ -25,6 +25,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.tvEmail.text = "alan.jeferson11@gmail.com"
+        self.tvPassword.text = "password"
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,15 +71,19 @@ class ViewController: UIViewController {
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.tvEmail.endEditing(true)
+        self.tvPassword.endEditing(true)
+    }
+    
     
     func signInToFirebase(email: String, password: String){
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if error == nil {
                 let storyboard = UIStoryboard(name: "Menu", bundle: nil)
-                
-                let VC1 = storyboard.instantiateViewController(withIdentifier: "MainMenuViewController") as! ViewController
-                let navController = UINavigationController(rootViewController: VC1) // Creating a navigation controller with VC1 at the root of the navigation stack.
-                self.present(navController, animated:true, completion: nil)
+                if let feedViewController = storyboard.instantiateInitialViewController() {
+                    self.present(feedViewController, animated:true, completion: nil)
+                }
             }
         }
     }
