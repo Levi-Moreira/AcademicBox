@@ -22,6 +22,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         self.setupView()
         self.observeChanges()
+        Professor.saveProfessors()
+        Discipline.saveDisciplines()
     }
     
     func setupView() {
