@@ -10,6 +10,7 @@
 		28303BBF1EEB30A600E59C50 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28303BBE1EEB30A600E59C50 /* FeedViewController.swift */; };
 		28303BC51EEB4B4300E59C50 /* UploadFilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28303BC41EEB4B4300E59C50 /* UploadFilesViewController.swift */; };
 		28303BC71EEB4B9700E59C50 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28303BC61EEB4B9700E59C50 /* Material.swift */; };
+		2889E4C01EEE254A00AA4EAB /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2889E4BF1EEE254A00AA4EAB /* AppUser.swift */; };
 		28C7F3931EEBAAD700FE83A0 /* Discipline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C7F3921EEBAAD700FE83A0 /* Discipline.swift */; };
 		28C7F3951EEBAAF500FE83A0 /* Professor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C7F3941EEBAAF500FE83A0 /* Professor.swift */; };
 		505FDA99A661A11117FC37FC /* Pods_AcademicBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EF4EC45D5D56253461D598 /* Pods_AcademicBox.framework */; };
@@ -49,6 +50,7 @@
 		28303BBE1EEB30A600E59C50 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		28303BC41EEB4B4300E59C50 /* UploadFilesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadFilesViewController.swift; sourceTree = "<group>"; };
 		28303BC61EEB4B9700E59C50 /* Material.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
+		2889E4BF1EEE254A00AA4EAB /* AppUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		28C7F3921EEBAAD700FE83A0 /* Discipline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Discipline.swift; sourceTree = "<group>"; };
 		28C7F3941EEBAAF500FE83A0 /* Professor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Professor.swift; sourceTree = "<group>"; };
 		4EC366DAEDAD6AF5BFEBF3A6 /* Pods-AcademicBoxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcademicBoxTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcademicBoxTests/Pods-AcademicBoxTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				28303BC61EEB4B9700E59C50 /* Material.swift */,
 				28C7F3921EEBAAD700FE83A0 /* Discipline.swift */,
 				28C7F3941EEBAAF500FE83A0 /* Professor.swift */,
+				2889E4BF1EEE254A00AA4EAB /* AppUser.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				28303BBF1EEB30A600E59C50 /* FeedViewController.swift in Sources */,
 				28C7F3931EEBAAD700FE83A0 /* Discipline.swift in Sources */,
 				28303BC51EEB4B4300E59C50 /* UploadFilesViewController.swift in Sources */,
+				2889E4C01EEE254A00AA4EAB /* AppUser.swift in Sources */,
 				28C7F3951EEBAAF500FE83A0 /* Professor.swift in Sources */,
 				28303BC71EEB4B9700E59C50 /* Material.swift in Sources */,
 				A210304B1EE5EEDC0026E0D4 /* AppDelegate.swift in Sources */,

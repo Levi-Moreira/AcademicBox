@@ -15,6 +15,18 @@ class Discipline {
     var professor: Professor
     
     static let kReferenceName = "disciplines"
+    static let kReferenceUsersName = "users"
+    
+    var reference: DatabaseReference {
+        return Database
+            .database()
+            .reference(withPath: Discipline.kReferenceName)
+            .child(self.name.snakerized)
+    }
+    
+    var usersReference: DatabaseReference {
+        return self.reference.child(Discipline.kReferenceUsersName)
+    }
     
     static var disciplines: [Discipline] {
         let professors = Professor.professors

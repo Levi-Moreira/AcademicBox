@@ -15,15 +15,25 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     
     let kSegueToUpload = "SegueFromFeedToUpload"
-    let reference = Database.database().reference(withPath: "materials")
+    let reference = Database.database().reference()//(withPath: "users")
     var materials = [Material]()
+    var user: AppUser = AppUser.loggedUser
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
-        self.observeChanges()
-        Professor.saveProfessors()
-        Discipline.saveDisciplines()
+//        self.observeChanges()
+        
+        
+        self.user.saveUserToCloud()
+        
+        
+        let disciplines = Discipline.disciplines
+        disciplines.forEach { self.user.add(discipline: $0) }
+        self.user.saveDisciplines()
+        
+//        Professor.saveProfessors()
+//        Discipline.saveDisciplines()
     }
     
     func setupView() {
@@ -52,21 +62,29 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     private func observeChanges() {
         
         
-        self.reference.observe(.value, with: { [weak self] (snapshot) in
+//        let query = self.reference.queryLimited(toFirst: 2)
+        
+        
+        self.reference.child("users").observe(.value, with: { [weak self] (snapshot) in
             
             if !snapshot.exists() {
                 return
             }
             
-            self?.materials.removeAll()
-            for item in snapshot.children {
-                if let item = item as? DataSnapshot,
-                    let value = item.value as? [String: Any] {
-                    self?.materials.append(Material(json: JSON(value)))
-                }
+            if let dict = snapshot.value as? [String: String] {
+                let json = JSON(dict)
+                print(json["name"].stringValue)
             }
             
-            self?.tableView.reloadData()
+//            self?.materials.removeAll()
+//            for item in snapshot.children {
+//                if let item = item as? DataSnapshot,
+//                    let value = item.value as? [String: String] {
+//                    self?.materials.append(Material(json: JSON(value)))
+//                }
+//            }
+//            
+//            self?.tableView.reloadData()
             
             
         })
