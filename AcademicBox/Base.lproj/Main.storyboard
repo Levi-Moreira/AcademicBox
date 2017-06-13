@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="w84-GW-snV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="w84-GW-snV">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -70,7 +70,7 @@
                     <connections>
                         <outlet property="tvEmail" destination="pjy-YY-FkY" id="0w4-gk-6ti"/>
                         <outlet property="tvPassword" destination="9ep-cE-HeT" id="Gzw-5t-omQ"/>
-                        <segue destination="IVw-wi-TPq" kind="push" identifier="joinSegue" id="aVr-tw-mBc"/>
+                        <segue destination="IVw-wi-TPq" kind="show" identifier="joinSegue" id="Tyg-zt-I13"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -31,18 +31,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-<<<<<<< HEAD
         self.tvEmail.text = "alan.jeferson11@gmail.com"
         self.tvPassword.text = "password"
-=======
         
         indicator.frame = CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0)
         indicator.center = view.center
         view.addSubview(indicator)
         indicator.bringSubview(toFront: view)
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        
->>>>>>> master
         
     }
 
@@ -132,22 +128,17 @@ class ViewController: UIViewController {
                 self.indicator.stopAnimating()
                 
                 let storyboard = UIStoryboard(name: "Menu", bundle: nil)
-<<<<<<< HEAD
+
                 if let feedViewController = storyboard.instantiateInitialViewController() {
                     self.present(feedViewController, animated:true, completion: nil)
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.window?.rootViewController = feedViewController
                 }
-=======
-                
-                let VC1 = storyboard.instantiateViewController(withIdentifier: "MainMenuNavigation") as! UINavigationController
-                
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.window?.rootViewController = VC1
                 
             } else {
                 
                 self.indicator.stopAnimating()
                 self.showDialog(with: self.KFillAuthenticationAlertText)
->>>>>>> master
             }
         }
         

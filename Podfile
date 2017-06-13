@@ -4,22 +4,15 @@
 use_frameworks!
 
 target 'AcademicBox' do
-<<<<<<< HEAD
-	pod 'Firebase/Core'
-	pod 'Firebase/Auth'
 	pod 'Firebase/Database'
 	pod 'SwiftyJSON'
-=======
-pod 'Firebase/Core'
-pod 'Firebase/Auth'
-pod 'FacebookCore'
-pod 'FacebookLogin'
-pod 'FBSDKLoginKit'
-pod 'FBSDKCoreKit'
-pod 'FBSDKShareKit'
-
-
->>>>>>> master
+	pod 'Firebase/Core'
+	pod 'Firebase/Auth'
+	pod 'FacebookCore'
+	pod 'FacebookLogin'
+	pod 'FBSDKLoginKit'
+	pod 'FBSDKCoreKit'
+	pod 'FBSDKShareKit'
 end
 
 target 'AcademicBoxTests' do
