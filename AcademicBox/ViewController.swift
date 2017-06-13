@@ -7,7 +7,9 @@
 //
 
 import UIKit
-import FirebaseAuth
+import Firebase
+import FBSDKLoginKit
+
 
 class ViewController: UIViewController {
 
@@ -16,7 +18,11 @@ class ViewController: UIViewController {
     
     let kFillPasswordAlertText = "Preencha sua Senha"
     
+    let KFillAuthenticationAlertText = "Email não exite!"
+    
     var handle: AuthStateDidChangeListenerHandle?
+    
+    var indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     
     @IBOutlet weak var tvEmail: UITextField!
     
@@ -25,8 +31,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+<<<<<<< HEAD
         self.tvEmail.text = "alan.jeferson11@gmail.com"
         self.tvPassword.text = "password"
+=======
+        
+        indicator.frame = CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0)
+        indicator.center = view.center
+        view.addSubview(indicator)
+        indicator.bringSubview(toFront: view)
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+>>>>>>> master
         
     }
 
@@ -47,6 +63,7 @@ class ViewController: UIViewController {
     
     @IBAction func didTapSignIn(_ sender: UIButton) {
     
+        indicator.startAnimating()
         guard let email = tvEmail.text else {
             return
         }
@@ -77,17 +94,66 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func didTapSignInFacebook(_ sender: UIButton) {
+        
+        let loginManager = FBSDKLoginManager()
+        loginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+            if error == nil {
+                
+                self.indicator.stopAnimating()
+                
+                let storyboard = UIStoryboard(name: "Menu", bundle: nil)
+                
+                let VC1 = storyboard.instantiateViewController(withIdentifier: "MainMenuNavigation") as! UINavigationController
+                
+                let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                
+                Auth.auth().signIn(with: credential) { (user, error) in
+                    
+                }
+                
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.window?.rootViewController = VC1
+            } else {
+                
+                self.indicator.stopAnimating()
+                self.showDialog(with: self.KFillAuthenticationAlertText)
+            }
+        }
+        
+    }
+    
+    
+    
     func signInToFirebase(email: String, password: String){
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if error == nil {
+                
+                self.indicator.stopAnimating()
+                
                 let storyboard = UIStoryboard(name: "Menu", bundle: nil)
+<<<<<<< HEAD
                 if let feedViewController = storyboard.instantiateInitialViewController() {
                     self.present(feedViewController, animated:true, completion: nil)
                 }
+=======
+                
+                let VC1 = storyboard.instantiateViewController(withIdentifier: "MainMenuNavigation") as! UINavigationController
+                
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.window?.rootViewController = VC1
+                
+            } else {
+                
+                self.indicator.stopAnimating()
+                self.showDialog(with: self.KFillAuthenticationAlertText)
+>>>>>>> master
             }
         }
+        
+        
     }
-    
+
     
     func showDialog(with : String){
         let alert = UIAlertController(title: "Atenção", message: with, preferredStyle: UIAlertControllerStyle.alert)
@@ -97,6 +163,11 @@ class ViewController: UIViewController {
         // show the alert
         self.present(alert, animated: true, completion: nil)
 
+    }
+    
+    
+    @IBAction func didClickOnCreateAccount(_ sender: UIButton) {
+        performSegue(withIdentifier: "joinSegue", sender: nil)
     }
 
 }

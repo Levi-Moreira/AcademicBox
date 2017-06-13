@@ -43,20 +43,26 @@
                                     <action selector="didTapSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2do-NB-6jm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fv-OR-47q">
-                                <rect key="frame" x="0.0" y="430" width="313" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Entrar com Facebook"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42L-8J-syH">
                                 <rect key="frame" x="0.0" y="473" width="320" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Ainda não tem uma conta?"/>
+                                <connections>
+                                    <action selector="didClickOnCreateAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WpR-4M-lxm"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dGV-Ej-abV">
                                 <rect key="frame" x="89" y="72" width="143" height="159"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fv-OR-47q">
+                                <rect key="frame" x="4" y="430" width="313" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Entrar com Facebook"/>
+                                <connections>
+                                    <action selector="didTapSignInFacebook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oeb-Ea-cPB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -64,7 +70,7 @@
                     <connections>
                         <outlet property="tvEmail" destination="pjy-YY-FkY" id="0w4-gk-6ti"/>
                         <outlet property="tvPassword" destination="9ep-cE-HeT" id="Gzw-5t-omQ"/>
-                        <segue destination="IVw-wi-TPq" kind="push" id="aVr-tw-mBc"/>
+                        <segue destination="IVw-wi-TPq" kind="push" identifier="joinSegue" id="aVr-tw-mBc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -90,7 +96,7 @@
         <!--Cadastro-->
         <scene sceneID="r7x-JA-WXC">
             <objects>
-                <viewController id="IVw-wi-TPq" sceneMemberID="viewController">
+                <viewController id="IVw-wi-TPq" customClass="JoinViewController" customModule="AcademicBox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6hF-XF-0xO"/>
                         <viewControllerLayoutGuide type="bottom" id="hUe-WP-gSv"/>
@@ -106,12 +112,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A2V-u1-LJo">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite uma senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A2V-u1-LJo">
                                 <rect key="frame" x="8" y="324" width="305" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mFw-iV-5m1">
                                 <rect key="frame" x="89" y="72" width="143" height="159"/>
@@ -122,10 +128,17 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Cadastro" id="hmH-yg-2yN">
-                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="vD4-5e-Do6"/>
-                        <barButtonItem key="rightBarButtonItem" title="Próximo" id="klt-gU-VGq"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="klt-gU-VGq">
+                            <connections>
+                                <action selector="didClickCreate:" destination="IVw-wi-TPq" id="2vd-d1-TbZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="emailTextEmail" destination="7fU-hM-6YV" id="IcD-UE-ZAU"/>
+                        <outlet property="passwordTextView" destination="A2V-u1-LJo" id="p7m-iO-glU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uwj-EH-8Q9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

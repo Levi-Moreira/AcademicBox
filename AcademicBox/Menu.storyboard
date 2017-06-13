@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ax1-k3-qRC">
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="P0T-7Y-2ae">
+>>>>>>> master
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -124,9 +128,14 @@
         <!--Disciplines-->
         <scene sceneID="YcX-2g-G2a">
             <objects>
+<<<<<<< HEAD
                 <navigationController id="qJr-4T-fWe" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Disciplines" id="wst-N8-dZQ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wn8-f9-tqq">
+=======
+                <navigationController storyboardIdentifier="MainMenuNavigation" id="P0T-7Y-2ae" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="06U-E3-HJf">
+>>>>>>> master
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
