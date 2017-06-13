@@ -89,6 +89,7 @@ class JoinViewController: UIViewController {
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if error == nil{
                 self.dismiss(animated: true, completion: nil)
+                self.navigationController?.popViewController(animated: true)
             }else{
                 self.showDialog(with: self.kFillSignUpErrorAlertText)
                 
