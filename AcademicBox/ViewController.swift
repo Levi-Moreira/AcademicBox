@@ -127,6 +127,7 @@ class ViewController: UIViewController {
                 
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.window?.rootViewController = VC1
+                
             } else {
                 
                 self.indicator.stopAnimating()
@@ -146,6 +147,11 @@ class ViewController: UIViewController {
         // show the alert
         self.present(alert, animated: true, completion: nil)
 
+    }
+    
+    
+    @IBAction func didClickOnCreateAccount(_ sender: UIButton) {
+        performSegue(withIdentifier: "joinSegue", sender: nil)
     }
 
 }
