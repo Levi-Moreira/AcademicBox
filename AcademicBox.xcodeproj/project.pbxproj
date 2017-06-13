@@ -10,6 +10,7 @@
 		28303BBF1EEB30A600E59C50 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28303BBE1EEB30A600E59C50 /* FeedViewController.swift */; };
 		28303BC51EEB4B4300E59C50 /* UploadFilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28303BC41EEB4B4300E59C50 /* UploadFilesViewController.swift */; };
 		28303BC71EEB4B9700E59C50 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28303BC61EEB4B9700E59C50 /* Material.swift */; };
+		2843AF771EEF7007000F9644 /* DisciplinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2843AF761EEF7007000F9644 /* DisciplinesViewController.swift */; };
 		2889E4C01EEE254A00AA4EAB /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2889E4BF1EEE254A00AA4EAB /* AppUser.swift */; };
 		28C7F3931EEBAAD700FE83A0 /* Discipline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C7F3921EEBAAD700FE83A0 /* Discipline.swift */; };
 		28C7F3951EEBAAF500FE83A0 /* Professor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C7F3941EEBAAF500FE83A0 /* Professor.swift */; };
@@ -50,6 +51,7 @@
 		28303BBE1EEB30A600E59C50 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		28303BC41EEB4B4300E59C50 /* UploadFilesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadFilesViewController.swift; sourceTree = "<group>"; };
 		28303BC61EEB4B9700E59C50 /* Material.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
+		2843AF761EEF7007000F9644 /* DisciplinesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisciplinesViewController.swift; sourceTree = "<group>"; };
 		2889E4BF1EEE254A00AA4EAB /* AppUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		28C7F3921EEBAAD700FE83A0 /* Discipline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Discipline.swift; sourceTree = "<group>"; };
 		28C7F3941EEBAAF500FE83A0 /* Professor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Professor.swift; sourceTree = "<group>"; };
@@ -110,9 +112,11 @@
 		28303BBD1EEB308300E59C50 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A210304C1EE5EEDC0026E0D4 /* ViewController.swift */,
 				A27166E71EE9E43000B2AE89 /* MainMenuViewController.swift */,
 				28303BBE1EEB30A600E59C50 /* FeedViewController.swift */,
 				28303BC41EEB4B4300E59C50 /* UploadFilesViewController.swift */,
+				2843AF761EEF7007000F9644 /* DisciplinesViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -132,6 +136,8 @@
 		28303BC11EEB30C500E59C50 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				A25DA9331EE894D000E1FCFD /* GoogleService-Info.plist */,
+				A21030561EE5EEDC0026E0D4 /* Info.plist */,
 				A210304A1EE5EEDC0026E0D4 /* AppDelegate.swift */,
 			);
 			name = Config;
@@ -153,6 +159,13 @@
 			children = (
 			);
 			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		2843AF741EEF6FC1000F9644 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		9D96F5A66D32AA2A47EDC6B5 /* Frameworks */ = {
@@ -190,13 +203,11 @@
 		A21030491EE5EEDC0026E0D4 /* AcademicBox */ = {
 			isa = PBXGroup;
 			children = (
-				28303BC21EEB30D800E59C50 /* Model */,
 				28303BC11EEB30C500E59C50 /* Config */,
-				28303BC01EEB30B300E59C50 /* View */,
 				28303BBD1EEB308300E59C50 /* Controller */,
-				A25DA9331EE894D000E1FCFD /* GoogleService-Info.plist */,
-				A210304C1EE5EEDC0026E0D4 /* ViewController.swift */,
-				A21030561EE5EEDC0026E0D4 /* Info.plist */,
+				28303BC21EEB30D800E59C50 /* Model */,
+				28303BC01EEB30B300E59C50 /* View */,
+				2843AF741EEF6FC1000F9644 /* ViewModel */,
 			);
 			path = AcademicBox;
 			sourceTree = "<group>";
@@ -522,6 +533,7 @@
 				28C7F3931EEBAAD700FE83A0 /* Discipline.swift in Sources */,
 				28303BC51EEB4B4300E59C50 /* UploadFilesViewController.swift in Sources */,
 				2889E4C01EEE254A00AA4EAB /* AppUser.swift in Sources */,
+				2843AF771EEF7007000F9644 /* DisciplinesViewController.swift in Sources */,
 				28C7F3951EEBAAF500FE83A0 /* Professor.swift in Sources */,
 				28303BC71EEB4B9700E59C50 /* Material.swift in Sources */,
 				A210304B1EE5EEDC0026E0D4 /* AppDelegate.swift in Sources */,

@@ -12,7 +12,7 @@ import FirebaseDatabase
 class Discipline {
     
     var name: String
-    var professor: Professor
+    var professor: Professor?
     
     static let kReferenceName = "disciplines"
     static let kReferenceUsersName = "users"
@@ -42,6 +42,11 @@ class Discipline {
         self.professor = professor
     }
     
+    init(name: String) {
+        self.name = name
+    }
+    
+    
     static func saveDisciplines() {
         let disciplines = Discipline.disciplines
         let reference = Database.database().reference(withPath: kReferenceName)
@@ -53,7 +58,7 @@ class Discipline {
     func toJson() -> [String: Any] {
         let json: [String: Any] = [
             "name": self.name,
-            "professor": self.professor.name.snakerized
+            "professor": self.professor?.name.snakerized ?? ""
         ]
         return json
     }

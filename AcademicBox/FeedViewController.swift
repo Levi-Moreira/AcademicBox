@@ -24,9 +24,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.setupView()
 //        self.observeChanges()
         
-        
         self.user.saveUserToCloud()
-        
         
         let disciplines = Discipline.disciplines
         disciplines.forEach { self.user.add(discipline: $0) }

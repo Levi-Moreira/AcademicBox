@@ -61,14 +61,31 @@ class AppUser {
     }
     
     func saveDisciplines() {
-        var disciplinesJson = [String: Bool]()
+        var disciplinesJson = [String: String]()
         let userJson: [String: Any] = ["\(self.id)": true]
         for discipline in disciplines {
-            disciplinesJson.updateValue(true, forKey: discipline.name.snakerized)
+            disciplinesJson.updateValue(discipline.name, forKey: discipline.name.snakerized)
             discipline.usersReference.updateChildValues(userJson)
         }
         let json: [String: Any] = ["\(AppUser.kReferenceDisciplinesName)": disciplinesJson]
         self.selfReference().updateChildValues(json)
+    }
+    
+    func loadDisciplines(completionBlock: @escaping ([Discipline]) -> Void) {
+        let reference = Database
+            .database()
+            .reference(withPath: AppUser.kReferenceName)
+            .child(self.id)
+            .child(AppUser.kReferenceDisciplinesName)
+        reference.observe(.value, with: { (snapshot) in
+            
+            var disciplines = [Discipline]()
+            if let values = snapshot.value as? [String: String] {
+                values.forEach { disciplines.append(Discipline(name: $1)) }
+                completionBlock(disciplines)
+            }
+            
+        })
     }
     
 }
