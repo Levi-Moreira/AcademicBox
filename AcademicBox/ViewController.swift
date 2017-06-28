@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     
     let KFillAuthenticationAlertText = "Email não exite!"
     
+    var isUserIn = false
+    
     var handle: AuthStateDidChangeListenerHandle?
     
     var indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
@@ -40,6 +42,8 @@ class ViewController: UIViewController {
         indicator.bringSubview(toFront: view)
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
+
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,15 +53,17 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
-            if let user = user {
-                print("User is still in")
-            }else{
-                print("User is not signed in")
-            }
         })
         
-
-    
+        if Auth.auth().currentUser != nil {
+            let storyboard = UIStoryboard(name: "Menu", bundle: nil)
+            
+            if let feedViewController = storyboard.instantiateInitialViewController() {
+                self.present(feedViewController, animated:true, completion: nil)
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.window?.rootViewController = feedViewController
+            }
+        }
         
     }
     

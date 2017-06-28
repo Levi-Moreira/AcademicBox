@@ -29,7 +29,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iaZ-T2-c2G" id="IaB-D6-4Fu">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -134,7 +134,7 @@
             <objects>
                 <navigationController id="qJr-4T-fWe" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Disciplines" id="wst-N8-dZQ"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wn8-f9-tqq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wn8-f9-tqq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -166,7 +166,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fjp-rL-ZVo" id="JMf-BN-oxz">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -197,7 +197,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c63-mu-Z3v" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Feed" id="ut8-oK-O5G"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DpA-dw-XcZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="DpA-dw-XcZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -222,7 +222,7 @@
                             <tableViewSection headerTitle="Sign out" id="Ehk-IH-syf">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fXc-Q9-zSg">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fXc-Q9-zSg" id="rfQ-AU-DkN">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -257,7 +257,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Gs-RN-D3Y" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YLb-Y1-KZQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YLb-Y1-KZQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -276,7 +276,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qyw-Qr-on5" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" id="yD6-aZ-GsQ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qA0-1J-f1W">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qA0-1J-f1W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
