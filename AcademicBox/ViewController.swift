@@ -51,6 +51,8 @@ class ViewController: UIViewController {
         handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
             
         })
+    
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
