@@ -49,15 +49,21 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
-            
+            if let user = user {
+                print("User is still in")
+            }else{
+                print("User is not signed in")
+            }
         })
+        
+
     
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        Auth.auth().removeStateDidChangeListener(handle!)
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        Auth.auth().removeStateDidChangeListener(handle!)
+//    }
     
     @IBAction func didTapSignIn(_ sender: UIButton) {
     

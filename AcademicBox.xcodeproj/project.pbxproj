@@ -26,6 +26,7 @@
 		A25DA9341EE894D000E1FCFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A25DA9331EE894D000E1FCFD /* GoogleService-Info.plist */; };
 		A27166E81EE9E43000B2AE89 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27166E71EE9E43000B2AE89 /* MainMenuViewController.swift */; };
 		A27166EA1EE9F6A700B2AE89 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A27166E91EE9F6A700B2AE89 /* Menu.storyboard */; };
+		A2B207131F0445CD0003C4BC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B207121F0445CD0003C4BC /* SettingsViewController.swift */; };
 		B4E1AD3A86515520C15D1E4A /* Pods_AcademicBoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C47FBA04E3B4963B7EE55FD /* Pods_AcademicBoxTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		A25DA9331EE894D000E1FCFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A27166E71EE9E43000B2AE89 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		A27166E91EE9F6A700B2AE89 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		A2B207121F0445CD0003C4BC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BEB19FB76D9C3304E73121CF /* Pods-AcademicBoxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcademicBoxUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcademicBoxUITests/Pods-AcademicBoxUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CC077005A394675D19DAD7F3 /* Pods-AcademicBoxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcademicBoxTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcademicBoxTests/Pods-AcademicBoxTests.release.xcconfig"; sourceTree = "<group>"; };
 		D1C2497D5293F079A7C46357 /* Pods_AcademicBoxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcademicBoxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +121,7 @@
 				28303BBE1EEB30A600E59C50 /* FeedViewController.swift */,
 				28303BC41EEB4B4300E59C50 /* UploadFilesViewController.swift */,
 				2843AF761EEF7007000F9644 /* DisciplinesViewController.swift */,
+				A2B207121F0445CD0003C4BC /* SettingsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 			files = (
 				A27166E81EE9E43000B2AE89 /* MainMenuViewController.swift in Sources */,
 				A210304D1EE5EEDC0026E0D4 /* ViewController.swift in Sources */,
+				A2B207131F0445CD0003C4BC /* SettingsViewController.swift in Sources */,
 				28303BBF1EEB30A600E59C50 /* FeedViewController.swift in Sources */,
 				28C7F3931EEBAAD700FE83A0 /* Discipline.swift in Sources */,
 				28303BC51EEB4B4300E59C50 /* UploadFilesViewController.swift in Sources */,

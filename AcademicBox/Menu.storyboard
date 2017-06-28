@@ -211,23 +211,46 @@
             <point key="canvasLocation" x="273" y="-698"/>
         </scene>
         <!--Settings-->
-        <scene sceneID="4Q9-CI-Ln9">
+        <scene sceneID="dly-93-Ogp">
             <objects>
-                <viewController id="7w2-O0-8YR" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="LSX-bW-2Jr"/>
-                        <viewControllerLayoutGuide type="bottom" id="8RT-Se-nZK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DZH-0I-any">
+                <tableViewController id="ZUL-jz-7b5" customClass="SettingsViewController" customModule="AcademicBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="7EQ-xh-q0s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Settings" id="QFd-vz-cqk"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QRe-pr-oGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Sign out" id="Ehk-IH-syf">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fXc-Q9-zSg">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fXc-Q9-zSg" id="rfQ-AU-DkN">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E42-Z3-Vax">
+                                                    <rect key="frame" x="31" y="11" width="64" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="ZUL-jz-7b5" id="jGQ-UZ-ef3"/>
+                            <outlet property="delegate" destination="ZUL-jz-7b5" id="xFW-gZ-FQb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="Or3-nd-Gex"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2AF-IL-8gp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1062" y="868"/>
+            <point key="canvasLocation" x="1108" y="868"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iXu-cI-MI1">
@@ -259,7 +282,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="7w2-O0-8YR" kind="relationship" relationship="rootViewController" id="HFP-GY-Hlj"/>
+                        <segue destination="ZUL-jz-7b5" kind="relationship" relationship="rootViewController" id="7zL-7j-8gz"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I02-ml-inA" userLabel="First Responder" sceneMemberID="firstResponder"/>
