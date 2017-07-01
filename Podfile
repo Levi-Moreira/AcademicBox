@@ -8,6 +8,7 @@ target 'AcademicBox' do
 	pod 'SwiftyJSON'
 	pod 'Firebase/Core'
 	pod 'Firebase/Auth'
+	pod 'Firebase/Storage'
 	pod 'FacebookCore'
 	pod 'FacebookLogin'
 	pod 'FBSDKLoginKit'
