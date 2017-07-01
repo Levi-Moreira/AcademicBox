@@ -9,16 +9,21 @@
 import UIKit
 import FirebaseDatabase
 
-class UploadFilesViewController: UIViewController {
+class UploadFilesViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var textFieldMaterialName: UITextField!
     
     let reference = Database.database().reference(withPath: "materials")
+    var storageHelper: FirebaseStorageHelper
+    let user = AppUser.loggedUser
+    let imagePicker = UIImagePickerController()
     
     var didUploadMaterial: ((Material) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.imagePicker.delegate = self
+        self.storageHelper = FirebaseStorageHelper(user: self.user)
     }
 
     
@@ -26,7 +31,9 @@ class UploadFilesViewController: UIViewController {
     
     
     @IBAction func didTouchPickFile(_ sender: UIButton) {
-        
+        self.imagePicker.allowsEditing = false
+        self.imagePicker.sourceType = .photoLibrary
+        self.present(self.imagePicker, animated: true, completion: nil)
     }
     
     
@@ -61,6 +68,21 @@ class UploadFilesViewController: UIViewController {
         }
         
     
+    }
+    
+    
+    //MARK:- UIImagePickerController Delegate
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage,
+            let data = UIImagePNGRepresentation(image) {
+            self.storageHelper.upload(file: data, completionHandler: { error in
+                
+            })
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
     }
 
 }
