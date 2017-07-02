@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -77,6 +79,27 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HRc-vb-DMt" id="W0k-kR-7aF">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajU-zn-JuH">
+                                                    <rect key="frame" x="15" y="12" width="46" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Default" placeholder="Nome" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="njY-y7-xr2">
+                                                    <rect key="frame" x="81" y="11" width="272" height="22"/>
+                                                    <color key="textColor" red="0.55686277149999996" green="0.55686277149999996" blue="0.55686277149999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="njY-y7-xr2" firstAttribute="centerY" secondItem="W0k-kR-7aF" secondAttribute="centerYWithinMargins" id="3hw-na-5VF"/>
+                                                <constraint firstItem="njY-y7-xr2" firstAttribute="leading" secondItem="ajU-zn-JuH" secondAttribute="trailing" constant="20" id="98v-Y1-Ysr"/>
+                                                <constraint firstAttribute="trailing" secondItem="njY-y7-xr2" secondAttribute="trailing" constant="22" id="Oc0-1Y-IXa"/>
+                                                <constraint firstItem="ajU-zn-JuH" firstAttribute="centerY" secondItem="W0k-kR-7aF" secondAttribute="centerYWithinMargins" id="XZv-Ti-wd3"/>
+                                                <constraint firstItem="ajU-zn-JuH" firstAttribute="leading" secondItem="W0k-kR-7aF" secondAttribute="leading" constant="15" id="Ys9-p3-DV4"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -143,11 +166,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Novo Material" id="Tap-96-1s2">
-                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="agc-vO-TSf"/>
-                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="opP-yS-2CV"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="agc-vO-TSf">
+                            <connections>
+                                <action selector="didTouchButtonCancel:" destination="2kA-IY-NAJ" id="Tfq-pK-xxu"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="opP-yS-2CV">
+                            <connections>
+                                <action selector="didTouchButtonSave:" destination="2kA-IY-NAJ" id="yxQ-cJ-Wxv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionViewImages" destination="URs-QQ-pDQ" id="IKX-8b-uzH"/>
+                        <outlet property="textFieldMaterialName" destination="njY-y7-xr2" id="qIP-tL-OKU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cw5-iD-AzI" userLabel="First Responder" sceneMemberID="firstResponder"/>

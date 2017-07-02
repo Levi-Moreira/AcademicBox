@@ -19,12 +19,12 @@ class Material {
     var path = ""
     var image: UIImage?
     var kind: MaterialKind
+    var baseName = ""
     
     var randomImageFileName: String {
         var r = [UInt32]()
-        (0..<3).forEach { r.append($0 + arc4random() / 10_000) }
-        let date = NSDate()
-        return "\(date.timeIntervalSince1970)\(r[0])\(r[1])\(r[2])\(date.timeIntervalSince1970 / Double(arc4random() + 1)).jpeg"
+        (0..<3).forEach { r.append($0 + arc4random() / 1000) }
+        return "\(self.baseName)_\(r[0])\(r[1])\(r[2])).jpeg"
     }
     
     init(kind: MaterialKind) {
@@ -76,15 +76,5 @@ class Material {
     
     func download() {
     }
-    
-//    init(json: JSON) {
-//        self.name = json["name"].stringValue
-//    }
-//    
-//    func toJson() -> [String: Any] {
-//        return [
-//            "name": self.name
-//        ]
-//    }
     
 }
