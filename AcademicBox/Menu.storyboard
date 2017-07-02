@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ax1-k3-qRC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ax1-k3-qRC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -60,55 +60,99 @@
             </objects>
             <point key="canvasLocation" x="1062" y="-698"/>
         </scene>
-        <!--Upload File-->
-        <scene sceneID="yd7-hi-ACD">
+        <!--Novo Material-->
+        <scene sceneID="TLf-Ez-dYd">
             <objects>
-                <viewController storyboardIdentifier="SegueFromFeedToUpload" id="qfW-f6-6Nf" customClass="UploadFilesViewController" customModule="AcademicBox" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="l7y-ML-SBU"/>
-                        <viewControllerLayoutGuide type="bottom" id="uSB-bz-02N"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1Z1-hK-n6b">
+                <tableViewController id="2kA-IY-NAJ" customClass="UploadFilesViewController" customModule="AcademicBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Bvf-L7-eba">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bkf-Yc-Dht">
-                                <rect key="frame" x="78" y="136" width="213" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dR-0g-0fZ">
-                                <rect key="frame" x="130" y="174" width="114" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Escolher arquivo"/>
-                                <connections>
-                                    <action selector="didTouchPickFile:" destination="qfW-f6-6Nf" eventType="touchUpInside" id="0c8-13-UN6"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Upload File" id="hgO-FQ-uGn">
-                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="toq-3j-zMR">
-                            <connections>
-                                <action selector="didTouchButtonCancel:" destination="qfW-f6-6Nf" id="1v7-d9-RIa"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="6oU-Mg-Beq">
-                            <connections>
-                                <action selector="didTouchButtonSave:" destination="qfW-f6-6Nf" id="sKq-AJ-S1O"/>
-                            </connections>
-                        </barButtonItem>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Informações" id="RC8-m2-6FV">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HRc-vb-DMt">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HRc-vb-DMt" id="W0k-kR-7aF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Imagens" id="8la-uQ-NBp">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="bmr-dY-pa8">
+                                        <rect key="frame" x="0.0" y="155.5" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bmr-dY-pa8" id="kRE-gz-aER">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="URs-QQ-pDQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                                    <color key="backgroundColor" red="0.11652074749999999" green="0.52779680490000003" blue="0.1742231548" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YwD-fT-ue6">
+                                                        <size key="itemSize" width="82" height="74.5"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UploadFilesImagesCollectionViewCell" id="C2C-D7-3Ka" customClass="UploadImagesCollectionViewCell" customModule="AcademicBox" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="12.5" width="82" height="74.5"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                <rect key="frame" x="0.0" y="0.0" width="82" height="74.5"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YDa-dR-rH3">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="82" height="74.5"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                            </view>
+                                                            <color key="backgroundColor" red="0.74509805439999999" green="0.0" blue="0.050980392839999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="YDa-dR-rH3" secondAttribute="trailing" id="9Lb-Tf-XRP"/>
+                                                                <constraint firstAttribute="bottom" secondItem="YDa-dR-rH3" secondAttribute="bottom" id="OZV-ao-coA"/>
+                                                                <constraint firstItem="YDa-dR-rH3" firstAttribute="top" secondItem="C2C-D7-3Ka" secondAttribute="top" id="WOn-QF-as0"/>
+                                                                <constraint firstItem="YDa-dR-rH3" firstAttribute="leading" secondItem="C2C-D7-3Ka" secondAttribute="leading" id="qxB-zR-R4K"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="imageView" destination="YDa-dR-rH3" id="KBV-a1-leg"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="URs-QQ-pDQ" firstAttribute="top" secondItem="kRE-gz-aER" secondAttribute="top" id="cbO-Qf-Gdx"/>
+                                                <constraint firstItem="URs-QQ-pDQ" firstAttribute="leading" secondItem="kRE-gz-aER" secondAttribute="leading" id="k3n-DT-bpf"/>
+                                                <constraint firstAttribute="trailing" secondItem="URs-QQ-pDQ" secondAttribute="trailing" id="ogS-LG-ZSB"/>
+                                                <constraint firstAttribute="bottom" secondItem="URs-QQ-pDQ" secondAttribute="bottom" id="yQ4-07-hZg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="2kA-IY-NAJ" id="4Zg-Vj-rUH"/>
+                            <outlet property="delegate" destination="2kA-IY-NAJ" id="7to-yY-W36"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Novo Material" id="Tap-96-1s2">
+                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="agc-vO-TSf"/>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="opP-yS-2CV"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="textFieldMaterialName" destination="bkf-Yc-Dht" id="19b-5U-M4l"/>
+                        <outlet property="collectionViewImages" destination="URs-QQ-pDQ" id="IKX-8b-uzH"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5c-7t-hrm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cw5-iD-AzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2698" y="-699"/>
+            <point key="canvasLocation" x="2701.5999999999999" y="-699.40029985007504"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hZp-ul-T5J">
@@ -263,7 +307,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="qfW-f6-6Nf" kind="relationship" relationship="rootViewController" id="2bM-jf-Xpm"/>
+                        <segue destination="2kA-IY-NAJ" kind="relationship" relationship="rootViewController" id="7Ez-F4-voy"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ne-p8-FKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
