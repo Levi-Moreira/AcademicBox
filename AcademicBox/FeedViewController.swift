@@ -53,7 +53,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCellFeed", for: indexPath)
-        cell.textLabel?.text = self.materials[indexPath.row].name
+//        cell.textLabel?.text = self.materials[indexPath.row].name
         return cell
     }
     
@@ -63,17 +63,17 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        let query = self.reference.queryLimited(toFirst: 2)
         
         
-        self.reference.child("users").observe(.value, with: { [weak self] (snapshot) in
-            
-            if !snapshot.exists() {
-                return
-            }
-            
-            if let dict = snapshot.value as? [String: String] {
-                let json = JSON(dict)
-                print(json["name"].stringValue)
-            }
-            
+//        self.reference.child("users").observe(.value, with: { [weak self] (snapshot) in
+//            
+//            if !snapshot.exists() {
+//                return
+//            }
+//            
+//            if let dict = snapshot.value as? [String: String] {
+//                let json = JSON(dict)
+//                print(json["name"].stringValue)
+//            }
+        
 //            self?.materials.removeAll()
 //            for item in snapshot.children {
 //                if let item = item as? DataSnapshot,
@@ -85,7 +85,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //            self?.tableView.reloadData()
             
             
-        })
+//        })
     
     }
     
