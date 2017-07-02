@@ -17,11 +17,14 @@ class Material {
     private static let kMaterialsBucket = "materials"
 
     var path = ""
-    var data: Data?
+    var image: UIImage?
     var kind: MaterialKind
     
     var randomImageFileName: String {
-        return "some_random_name.jpeg"
+        var r = [UInt32]()
+        (0..<3).forEach { r.append($0 + arc4random() / 10_000) }
+        let date = NSDate()
+        return "\(date.timeIntervalSince1970)\(r[0])\(r[1])\(r[2])\(date.timeIntervalSince1970 / Double(arc4random() + 1)).jpeg"
     }
     
     init(kind: MaterialKind) {
@@ -42,7 +45,8 @@ class Material {
     
     func upload(progressHandler: @escaping (_ progress: Double) -> Void, completionHandler: @escaping (_ error: Error?) -> Void) {
         
-        guard let data = self.data else { return }
+        guard let image = self.image,
+            let data = UIImageJPEGRepresentation(image, 0.0) else { return }
         
         let name = self.randomImageFileName
         
