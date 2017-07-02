@@ -14,7 +14,6 @@ class UploadFilesViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var textFieldMaterialName: UITextField!
     
     let reference = Database.database().reference(withPath: "materials")
-    var storageHelper: FirebaseStorageHelper
     let user = AppUser.loggedUser
     let imagePicker = UIImagePickerController()
     
@@ -23,7 +22,6 @@ class UploadFilesViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         self.imagePicker.delegate = self
-        self.storageHelper = FirebaseStorageHelper(user: self.user)
     }
 
     
@@ -49,23 +47,23 @@ class UploadFilesViewController: UIViewController, UIImagePickerControllerDelega
     
     private func saveMaterial() {
         
-        guard let materialName = self.textFieldMaterialName.text else {
-            return
-        }
-
-        let material = Material(name: materialName)
-        
-        self.reference.childByAutoId().setValue(material.toJson()) { [weak self] (error, reference) in
-            
-            if let _ = error {
-                return
-            }
-            
-            print(reference)
-            
-            self?.dismiss(animated: true, completion: nil)
-            
-        }
+//        guard let materialName = self.textFieldMaterialName.text else {
+//            return
+//        }
+//
+//        let material = Material(name: materialName)
+//        
+//        self.reference.childByAutoId().setValue(material.toJson()) { [weak self] (error, reference) in
+//            
+//            if let _ = error {
+//                return
+//            }
+//            
+//            print(reference)
+//            
+//            self?.dismiss(animated: true, completion: nil)
+//            
+//        }
         
     
     }
@@ -75,14 +73,26 @@ class UploadFilesViewController: UIViewController, UIImagePickerControllerDelega
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage,
-            let data = UIImagePNGRepresentation(image) {
-            self.storageHelper.upload(file: data, completionHandler: { error in
+            let data = UIImageJPEGRepresentation(image, 0.0) {
+            let material = Material(kind: .image)
+            material.data = data
+            material.upload(progressHandler: { (fraction) in
+            }, completionHandler: { (error) in
+                
+                if let error = error {
+                    print("Error: \(error.localizedDescription)")
+                    return
+                }
+                
+                print("Material uploaded: \(material.path)")
                 
             })
         }
+        self.imagePicker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.imagePicker.dismiss(animated: true, completion: nil)
     }
 
 }

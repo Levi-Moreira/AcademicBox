@@ -11,52 +11,25 @@ import FirebaseStorage
 
 class FirebaseStorageHelper {
 
-    private let user: AppUser
-    private let kFirebaseStorageBucketUrl = "gs://academicbox-844fd.appspot.com/images"
+    private let kFirebaseStorageBucketUrl = "gs://academicbox-844fd.appspot.com"
+    private let kImagesBucket = "images"
+    private let kMaterialsBucket = "materials"
     
     var rootReference: StorageReference {
         return Storage.storage().reference(forURL: kFirebaseStorageBucketUrl)
     }
     
-    init(user: AppUser) {
-        self.user = user
+    var imagesBucketReference: StorageReference {
+        return self.rootReference.child(kImagesBucket)
     }
     
-    func createImageReference(withPath path: String) -> StorageReference {
-        return self.rootReference.child("\(path)")
+    var materialsBucketReference: StorageReference {
+        return self.imagesBucketReference.child(kMaterialsBucket)
     }
     
-    func userBucketReference() -> StorageReference {
-        return self.rootReference.child("\(self.user.id)")
-    }
-    
-    func upload(file: Data, completionHandler: @escaping (_ error: NSError?) -> Void) {
-        
-        let uploadTask = self.userBucketReference()
-            .child("some-random-string.png")
-            .putData(file, metadata: nil) { metadata, error in
-            
-            guard let metadata = metadata else {
-                print("Some error occurred: \(error.debugDescription)")
-                completionHandler(error as! NSError)
-                return
-            }
-            
-            let url = metadata.downloadURL()
-            print(url ?? "No url")
-            
-        }
+    func upload(image: Data, completionHandler: @escaping (_ error: NSError?) -> Void) {
         
         
-        // Observing state changes
-        
-        uploadTask.observe(.success, handler: { (snapshot) in
-            
-            print(snapshot)
-            print("Upload completed successfully")
-            completionHandler(nil)
-            
-        })
         
     }
     
