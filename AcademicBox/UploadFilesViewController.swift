@@ -24,6 +24,12 @@ class UploadFilesViewController: UIViewController {
     
     // MARK:- Actions
     
+    
+    @IBAction func didTouchPickFile(_ sender: UIButton) {
+        
+    }
+    
+    
     @IBAction func didTouchButtonCancel(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
