@@ -16,6 +16,9 @@
 		28C7F3951EEBAAF500FE83A0 /* Professor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C7F3941EEBAAF500FE83A0 /* Professor.swift */; };
 		50A85D663F387BA9206A07A2 /* Pods_AcademicBoxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C2497D5293F079A7C46357 /* Pods_AcademicBoxUITests.framework */; };
 		75AAD6B3E92619E6EA7AAFE5 /* Pods_AcademicBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4859F8628BE1BF1840586A /* Pods_AcademicBox.framework */; };
+		A20556E71F0C18430016C105 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A20556E61F0C18430016C105 /* bg.png */; };
+		A20556EB1F0C1A5C0016C105 /* knowledge-1052014_1920.png in Resources */ = {isa = PBXBuildFile; fileRef = A20556EA1F0C1A5C0016C105 /* knowledge-1052014_1920.png */; };
+		A20556EE1F0C1C060016C105 /* Quicksand-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A20556ED1F0C1C060016C105 /* Quicksand-Regular.otf */; };
 		A210304B1EE5EEDC0026E0D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A210304A1EE5EEDC0026E0D4 /* AppDelegate.swift */; };
 		A210304D1EE5EEDC0026E0D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A210304C1EE5EEDC0026E0D4 /* ViewController.swift */; };
 		A21030501EE5EEDC0026E0D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A210304E1EE5EEDC0026E0D4 /* Main.storyboard */; };
@@ -59,6 +62,9 @@
 		28C7F3941EEBAAF500FE83A0 /* Professor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Professor.swift; sourceTree = "<group>"; };
 		327BBFD1882D02037E8CBEDF /* Pods-AcademicBoxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcademicBoxTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcademicBoxTests/Pods-AcademicBoxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F2AEDA79929C019DF84B5FF /* Pods-AcademicBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcademicBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcademicBox/Pods-AcademicBox.release.xcconfig"; sourceTree = "<group>"; };
+		A20556E61F0C18430016C105 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		A20556EA1F0C1A5C0016C105 /* knowledge-1052014_1920.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "knowledge-1052014_1920.png"; sourceTree = "<group>"; };
+		A20556ED1F0C1C060016C105 /* Quicksand-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.otf"; sourceTree = "<group>"; };
 		A21030471EE5EEDC0026E0D4 /* AcademicBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AcademicBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A210304A1EE5EEDC0026E0D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A210304C1EE5EEDC0026E0D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +200,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A20556E51F0C18430016C105 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				A20556EA1F0C1A5C0016C105 /* knowledge-1052014_1920.png */,
+				A20556E61F0C18430016C105 /* bg.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		A20556EC1F0C1C060016C105 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				A20556ED1F0C1C060016C105 /* Quicksand-Regular.otf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
 		A210303E1EE5EEDC0026E0D4 = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +242,8 @@
 		A21030491EE5EEDC0026E0D4 /* AcademicBox */ = {
 			isa = PBXGroup;
 			children = (
+				A20556EC1F0C1C060016C105 /* font */,
+				A20556E51F0C18430016C105 /* images */,
 				28303BC11EEB30C500E59C50 /* Config */,
 				28303BBD1EEB308300E59C50 /* Controller */,
 				28303BC21EEB30D800E59C50 /* Model */,
@@ -365,8 +390,11 @@
 			files = (
 				A27166EA1EE9F6A700B2AE89 /* Menu.storyboard in Resources */,
 				A21030551EE5EEDC0026E0D4 /* LaunchScreen.storyboard in Resources */,
+				A20556EB1F0C1A5C0016C105 /* knowledge-1052014_1920.png in Resources */,
+				A20556E71F0C18430016C105 /* bg.png in Resources */,
 				A25DA9341EE894D000E1FCFD /* GoogleService-Info.plist in Resources */,
 				A21030521EE5EEDC0026E0D4 /* Assets.xcassets in Resources */,
+				A20556EE1F0C1C060016C105 /* Quicksand-Regular.otf in Resources */,
 				A21030501EE5EEDC0026E0D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
