@@ -50,7 +50,6 @@
 /* Begin PBXFileReference section */
 		0D3828371D568D9E978C250C /* Pods-AcademicBoxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcademicBoxUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcademicBoxUITests/Pods-AcademicBoxUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1C47FBA04E3B4963B7EE55FD /* Pods_AcademicBoxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcademicBoxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		282DE3241EF09B8A008166D4 /* JoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JoinViewController.swift; path = ../../../JoinViewController.swift; sourceTree = "<group>"; };
 		28303BBE1EEB30A600E59C50 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		28303BC41EEB4B4300E59C50 /* UploadFilesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadFilesViewController.swift; sourceTree = "<group>"; };
 		28303BC61EEB4B9700E59C50 /* Material.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
@@ -115,7 +114,6 @@
 		28303BBD1EEB308300E59C50 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				282DE3241EF09B8A008166D4 /* JoinViewController.swift */,
 				A210304C1EE5EEDC0026E0D4 /* ViewController.swift */,
 				A27166E71EE9E43000B2AE89 /* MainMenuViewController.swift */,
 				28303BBE1EEB30A600E59C50 /* FeedViewController.swift */,
