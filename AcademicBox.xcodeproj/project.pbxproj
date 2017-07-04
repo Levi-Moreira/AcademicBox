@@ -19,6 +19,10 @@
 		A20556E71F0C18430016C105 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A20556E61F0C18430016C105 /* bg.png */; };
 		A20556EB1F0C1A5C0016C105 /* knowledge-1052014_1920.png in Resources */ = {isa = PBXBuildFile; fileRef = A20556EA1F0C1A5C0016C105 /* knowledge-1052014_1920.png */; };
 		A20556EE1F0C1C060016C105 /* Quicksand-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A20556ED1F0C1C060016C105 /* Quicksand-Regular.otf */; };
+		A20556F01F0C2EC20016C105 /* mortarboard.png in Resources */ = {isa = PBXBuildFile; fileRef = A20556EF1F0C2EC20016C105 /* mortarboard.png */; };
+		A20556F21F0C2F2C0016C105 /* mortarboard (1).png in Resources */ = {isa = PBXBuildFile; fileRef = A20556F11F0C2F2C0016C105 /* mortarboard (1).png */; };
+		A20556F41F0C2F990016C105 /* graduate.png in Resources */ = {isa = PBXBuildFile; fileRef = A20556F31F0C2F990016C105 /* graduate.png */; };
+		A20556F61F0C31660016C105 /* mortarboard (2).png in Resources */ = {isa = PBXBuildFile; fileRef = A20556F51F0C31660016C105 /* mortarboard (2).png */; };
 		A210304B1EE5EEDC0026E0D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A210304A1EE5EEDC0026E0D4 /* AppDelegate.swift */; };
 		A210304D1EE5EEDC0026E0D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A210304C1EE5EEDC0026E0D4 /* ViewController.swift */; };
 		A21030501EE5EEDC0026E0D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A210304E1EE5EEDC0026E0D4 /* Main.storyboard */; };
@@ -65,6 +69,10 @@
 		A20556E61F0C18430016C105 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		A20556EA1F0C1A5C0016C105 /* knowledge-1052014_1920.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "knowledge-1052014_1920.png"; sourceTree = "<group>"; };
 		A20556ED1F0C1C060016C105 /* Quicksand-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.otf"; sourceTree = "<group>"; };
+		A20556EF1F0C2EC20016C105 /* mortarboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mortarboard.png; sourceTree = "<group>"; };
+		A20556F11F0C2F2C0016C105 /* mortarboard (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mortarboard (1).png"; sourceTree = "<group>"; };
+		A20556F31F0C2F990016C105 /* graduate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graduate.png; sourceTree = "<group>"; };
+		A20556F51F0C31660016C105 /* mortarboard (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mortarboard (2).png"; sourceTree = "<group>"; };
 		A21030471EE5EEDC0026E0D4 /* AcademicBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AcademicBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A210304A1EE5EEDC0026E0D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A210304C1EE5EEDC0026E0D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +211,10 @@
 		A20556E51F0C18430016C105 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				A20556F51F0C31660016C105 /* mortarboard (2).png */,
+				A20556F31F0C2F990016C105 /* graduate.png */,
+				A20556F11F0C2F2C0016C105 /* mortarboard (1).png */,
+				A20556EF1F0C2EC20016C105 /* mortarboard.png */,
 				A20556EA1F0C1A5C0016C105 /* knowledge-1052014_1920.png */,
 				A20556E61F0C18430016C105 /* bg.png */,
 			);
@@ -391,10 +403,14 @@
 				A27166EA1EE9F6A700B2AE89 /* Menu.storyboard in Resources */,
 				A21030551EE5EEDC0026E0D4 /* LaunchScreen.storyboard in Resources */,
 				A20556EB1F0C1A5C0016C105 /* knowledge-1052014_1920.png in Resources */,
+				A20556F01F0C2EC20016C105 /* mortarboard.png in Resources */,
 				A20556E71F0C18430016C105 /* bg.png in Resources */,
+				A20556F21F0C2F2C0016C105 /* mortarboard (1).png in Resources */,
 				A25DA9341EE894D000E1FCFD /* GoogleService-Info.plist in Resources */,
+				A20556F41F0C2F990016C105 /* graduate.png in Resources */,
 				A21030521EE5EEDC0026E0D4 /* Assets.xcassets in Resources */,
 				A20556EE1F0C1C060016C105 /* Quicksand-Regular.otf in Resources */,
+				A20556F61F0C31660016C105 /* mortarboard (2).png in Resources */,
 				A21030501EE5EEDC0026E0D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

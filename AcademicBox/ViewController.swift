@@ -29,6 +29,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var tvEmail: UITextField!
     
     @IBOutlet weak var tvPassword: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    
+    @IBOutlet weak var navBar: UINavigationItem!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +46,13 @@ class ViewController: UIViewController {
         indicator.bringSubview(toFront: view)
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-
+loginButton.layer.borderWidth = 1.0
+        loginButton.layer.borderColor = UIColor.white.cgColor
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor.clear
 
     }
 
