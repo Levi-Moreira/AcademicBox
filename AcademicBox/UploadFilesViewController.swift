@@ -143,6 +143,16 @@ class UploadFilesViewController: UITableViewController, UIImagePickerControllerD
             return
         }
         
+        if materialName.isEmpty {
+            self.presentErrorAlert(withMessage: "Name is mandatory", completion: nil)
+            return
+        }
+        
+        if self.material.discipline.name.isEmpty {
+            self.presentErrorAlert(withMessage: "Discipline is mandatory", completion: nil)
+            return
+        }
+        
         self.material.name = materialName
         
         let shouldUploadImages = !self.material.images.isEmpty
@@ -199,10 +209,11 @@ class UploadFilesViewController: UITableViewController, UIImagePickerControllerD
     private func didFinishUploadingImages() {
         if !self.imageUploadError {
             print("All images have been successfully uploaded")
-            self.dismiss(animated: true, completion: nil)
+            self.presentSuccessAlert(withMessage: "Material successfully uploaded", completion: {
+                self.dismiss(animated: true, completion: nil)
+            })
         } else {
-            print("Some image was not uploaded")
-            // TODO Handle the error properly
+            self.presentErrorAlert(withMessage: "An error ocurred.", completion: nil)
         }
     }
     

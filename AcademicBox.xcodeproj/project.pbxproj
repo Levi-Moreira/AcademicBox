@@ -12,6 +12,7 @@
 		28303BC71EEB4B9700E59C50 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28303BC61EEB4B9700E59C50 /* Material.swift */; };
 		2843AF771EEF7007000F9644 /* DisciplinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2843AF761EEF7007000F9644 /* DisciplinesViewController.swift */; };
 		2847C63C1F0C6AA9003AD840 /* DisciplineSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847C63B1F0C6AA9003AD840 /* DisciplineSelectionViewController.swift */; };
+		2847C63F1F0C778D003AD840 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847C63E1F0C778D003AD840 /* UIViewController.swift */; };
 		2863A1441F09800600D541BD /* MaterialKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863A1431F09800600D541BD /* MaterialKind.swift */; };
 		2863A1461F0990A800D541BD /* UploadImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863A1451F0990A800D541BD /* UploadImagesCollectionViewCell.swift */; };
 		2863A1481F0993F500D541BD /* Materials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863A1471F0993F500D541BD /* Materials.swift */; };
@@ -66,6 +67,7 @@
 		28303BC61EEB4B9700E59C50 /* Material.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
 		2843AF761EEF7007000F9644 /* DisciplinesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisciplinesViewController.swift; sourceTree = "<group>"; };
 		2847C63B1F0C6AA9003AD840 /* DisciplineSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisciplineSelectionViewController.swift; sourceTree = "<group>"; };
+		2847C63E1F0C778D003AD840 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		2863A1431F09800600D541BD /* MaterialKind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialKind.swift; sourceTree = "<group>"; };
 		2863A1451F0990A800D541BD /* UploadImagesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadImagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		2863A1471F0993F500D541BD /* Materials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Materials.swift; sourceTree = "<group>"; };
@@ -196,6 +198,14 @@
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
+		2847C63D1F0C7778003AD840 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2847C63E1F0C778D003AD840 /* UIViewController.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
 		2863A1421F097FFD00D541BD /* Enum */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +283,7 @@
 		A21030491EE5EEDC0026E0D4 /* AcademicBox */ = {
 			isa = PBXGroup;
 			children = (
+				2847C63D1F0C7778003AD840 /* Extension */,
 				2863A1421F097FFD00D541BD /* Enum */,
 				A20556EC1F0C1C060016C105 /* font */,
 				A20556E51F0C18430016C105 /* images */,
@@ -608,6 +619,7 @@
 				2863A1481F0993F500D541BD /* Materials.swift in Sources */,
 				28C7F3951EEBAAF500FE83A0 /* Professor.swift in Sources */,
 				28303BC71EEB4B9700E59C50 /* Material.swift in Sources */,
+				2847C63F1F0C778D003AD840 /* UIViewController.swift in Sources */,
 				A210304B1EE5EEDC0026E0D4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
