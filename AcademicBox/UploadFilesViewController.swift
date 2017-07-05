@@ -13,8 +13,10 @@ class UploadFilesViewController: UITableViewController, UIImagePickerControllerD
     
     @IBOutlet weak var collectionViewImages: UICollectionView!
     @IBOutlet weak var textFieldMaterialName: UITextField!
+    @IBOutlet weak var textFieldDiscipline: UITextField!
     
     private let kCollectionViewCellUploadImages = "UploadFilesImagesCollectionViewCell"
+    private let kSegueToDisciplineSelection = "SegueFromUploadMaterialToDisciplineSelection"
     
     let user = AppUser.loggedUser
     let imagePicker = UIImagePickerController()
@@ -25,6 +27,8 @@ class UploadFilesViewController: UITableViewController, UIImagePickerControllerD
     var imageUploadError = false
     var imageUploadCount = 0
     
+    var disciplineIndex = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
@@ -34,6 +38,15 @@ class UploadFilesViewController: UITableViewController, UIImagePickerControllerD
     func setupView() {
         self.collectionViewImages.dataSource = self
         self.collectionViewImages.delegate = self
+    }
+    
+    
+    // MARK:- Table View Delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 && indexPath.row == 1 {
+            self.performSegue(withIdentifier: kSegueToDisciplineSelection, sender: nil)
+        }
     }
     
     
@@ -132,6 +145,8 @@ class UploadFilesViewController: UITableViewController, UIImagePickerControllerD
         
         self.material.name = materialName
         
+        let shouldUploadImages = !self.material.images.isEmpty
+        
         self.material.upload { [weak self] error in
             
             if let _ = error {
@@ -139,7 +154,11 @@ class UploadFilesViewController: UITableViewController, UIImagePickerControllerD
                 return
             }
             
-            self?.uploadMaterialImages()
+            if shouldUploadImages {
+                self?.uploadMaterialImages()
+            } else {
+                self?.didFinishUploadingImages()
+            }
             
         }
         
@@ -185,6 +204,26 @@ class UploadFilesViewController: UITableViewController, UIImagePickerControllerD
             print("Some image was not uploaded")
             // TODO Handle the error properly
         }
+    }
+    
+    
+    //MARK:- ViewController Override
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == kSegueToDisciplineSelection,
+            let controller = segue.destination as? DisciplineSelectionViewController {
+            controller.selectedIndex = self.disciplineIndex
+            controller.selectionBlock = { [weak self] (index, name) in
+                self?.didSelectDiscipline(atIndex: index, withName: name)
+            }
+        }
+    }
+    
+    
+    private func didSelectDiscipline(atIndex index: Int, withName name: String) {
+        self.disciplineIndex = index
+        self.material.discipline.name = name
+        self.textFieldDiscipline.text = name
     }
     
     

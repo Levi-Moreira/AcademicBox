@@ -18,6 +18,8 @@ class Materials: NSObject {
     var uploadedImages = 0
     var uploadedImagesError = 0
     
+    let discipline = Discipline(name: "")
+    
     var reference: DatabaseReference {
         return Database.database().reference(withPath: "materials")
     }
@@ -81,8 +83,10 @@ class Materials: NSObject {
     //    }
     //
     func toJson() -> [String: Any] {
+        let discipline: [String: Any] = [self.discipline.name.snakerized: self.discipline.name]
         return [
-            "name": self.name
+            "name": self.name,
+            "discipline": discipline
         ]
     }
     
