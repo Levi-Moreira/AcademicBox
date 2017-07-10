@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ax1-k3-qRC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ax1-k3-qRC">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Quicksand-Regular.otf">
+            <string>Quicksand-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Feed-->
         <scene sceneID="D36-Ko-woH">
@@ -48,6 +53,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Feed" id="aX5-Tl-Sh5">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="IRM-HJ-3M3">
+                            <color key="tintColor" red="0.59215686274509804" green="0.8901960784313725" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="didTouchAddButton:" destination="kKk-Jx-OfB" id="FMJ-LX-vLG"/>
                             </connections>
@@ -189,11 +195,13 @@
                     <navigationItem key="navigationItem" title="Novo Material" id="Tap-96-1s2">
                         <barButtonItem key="backBarButtonItem" title=" " id="6o2-e8-kbJ"/>
                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="agc-vO-TSf">
+                            <color key="tintColor" red="0.59215686270000001" green="0.89019607840000003" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="didTouchButtonCancel:" destination="2kA-IY-NAJ" id="Tfq-pK-xxu"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Salvar" id="opP-yS-2CV">
+                            <color key="tintColor" red="0.59215686270000001" green="0.89019607840000003" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="didTouchButtonSave:" destination="2kA-IY-NAJ" id="yxQ-cJ-Wxv"/>
                             </connections>
@@ -236,6 +244,7 @@
                     <navigationItem key="navigationItem" title="Disciplinas" id="aVb-kd-ruF">
                         <barButtonItem key="backBarButtonItem" title=" " id="PYJ-gm-C1E"/>
                         <barButtonItem key="rightBarButtonItem" title="Escolher" id="pFx-4j-kGE">
+                            <color key="tintColor" red="0.59215686270000001" green="0.89019607840000003" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="didTouchButtonSelect:" destination="NfI-Zq-4mH" id="4Cz-xd-niJ"/>
                             </connections>
@@ -274,6 +283,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wn8-f9-tqq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <connections>
                         <segue destination="jOg-42-8CS" kind="relationship" relationship="rootViewController" id="ipD-UM-idx"/>
@@ -299,13 +309,31 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCellDisciplines" id="Fjp-rL-ZVo">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCellDisciplines" id="Fjp-rL-ZVo" customClass="TableViewCellDisciplinesTableViewCell" customModule="AcademicBox" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fjp-rL-ZVo" id="JMf-BN-oxz">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-Book-100" translatesAutoresizingMaskIntoConstraints="NO" id="Ao7-Jy-D6F">
+                                                    <rect key="frame" x="8" y="8" width="25" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3f-zW-6kd">
+                                                    <rect key="frame" x="41" y="12" width="274" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="disciplineIcon" destination="Ao7-Jy-D6F" id="OD6-kb-ApU"/>
+                                            <outlet property="disciplineName" destination="o3f-zW-6kd" id="3u5-ex-PgF"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -326,7 +354,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8x-7W-NKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1063" y="63"/>
+            <point key="canvasLocation" x="1061.25" y="62.323943661971832"/>
         </scene>
         <!--Feed-->
         <scene sceneID="Bzf-pF-93s">
@@ -337,6 +365,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DpA-dw-XcZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -384,6 +413,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="Or3-nd-Gex"/>
+                    <connections>
+                        <outlet property="settingsItem" destination="Or3-nd-Gex" id="y0m-3I-bY8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2AF-IL-8gp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -397,6 +429,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YLb-Y1-KZQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -416,6 +449,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qA0-1J-f1W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -428,6 +462,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-Book-100" width="50" height="50"/>
         <image name="newspaper (1)" width="20" height="20"/>
         <image name="open-book-20" width="20" height="20"/>
         <image name="teacher-briefcase-20" width="20" height="20"/>

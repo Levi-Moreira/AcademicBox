@@ -42,8 +42,10 @@ class DisciplinesViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCellDisciplines", for: indexPath)
-        cell.textLabel?.text = self.disciplines[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCellDisciplines", for: indexPath) as! TableViewCellDisciplinesTableViewCell
+        
+        cell.disciplineName?.text = self.disciplines[indexPath.row].name
+        
         return cell
     }
     
