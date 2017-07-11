@@ -40,6 +40,7 @@
 		A27166EA1EE9F6A700B2AE89 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A27166E91EE9F6A700B2AE89 /* Menu.storyboard */; };
 		A2B207131F0445CD0003C4BC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B207121F0445CD0003C4BC /* SettingsViewController.swift */; };
 		A2ED692F1F140EE2004D2119 /* TableViewCellDisciplinesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ED692E1F140EE2004D2119 /* TableViewCellDisciplinesTableViewCell.swift */; };
+		A2ED69391F142DFC004D2119 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2ED69381F142DFC004D2119 /* Default-568h@2x.png */; };
 		B4E1AD3A86515520C15D1E4A /* Pods_AcademicBoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C47FBA04E3B4963B7EE55FD /* Pods_AcademicBoxTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +103,7 @@
 		A27166E91EE9F6A700B2AE89 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		A2B207121F0445CD0003C4BC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A2ED692E1F140EE2004D2119 /* TableViewCellDisciplinesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellDisciplinesTableViewCell.swift; sourceTree = "<group>"; };
+		A2ED69381F142DFC004D2119 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		BEB19FB76D9C3304E73121CF /* Pods-AcademicBoxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcademicBoxUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcademicBoxUITests/Pods-AcademicBoxUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CC077005A394675D19DAD7F3 /* Pods-AcademicBoxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcademicBoxTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcademicBoxTests/Pods-AcademicBoxTests.release.xcconfig"; sourceTree = "<group>"; };
 		D1C2497D5293F079A7C46357 /* Pods_AcademicBoxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcademicBoxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,6 +266,7 @@
 		A210303E1EE5EEDC0026E0D4 = {
 			isa = PBXGroup;
 			children = (
+				A2ED69381F142DFC004D2119 /* Default-568h@2x.png */,
 				A21030491EE5EEDC0026E0D4 /* AcademicBox */,
 				A210305E1EE5EEDC0026E0D4 /* AcademicBoxTests */,
 				A21030691EE5EEDC0026E0D4 /* AcademicBoxUITests */,
@@ -443,6 +446,7 @@
 				A25DA9341EE894D000E1FCFD /* GoogleService-Info.plist in Resources */,
 				A20556F41F0C2F990016C105 /* graduate.png in Resources */,
 				A21030521EE5EEDC0026E0D4 /* Assets.xcassets in Resources */,
+				A2ED69391F142DFC004D2119 /* Default-568h@2x.png in Resources */,
 				A20556EE1F0C1C060016C105 /* Quicksand-Regular.otf in Resources */,
 				A20556F61F0C31660016C105 /* mortarboard (2).png in Resources */,
 				A21030501EE5EEDC0026E0D4 /* Main.storyboard in Resources */,
@@ -778,6 +782,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YE6GS5VH8M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AcademicBox",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = AcademicBox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ifce2.AcademicBox;
@@ -792,6 +801,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YE6GS5VH8M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AcademicBox",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = AcademicBox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ifce2.AcademicBox;

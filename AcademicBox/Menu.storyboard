@@ -10,11 +10,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Quicksand-Regular.otf">
-            <string>Quicksand-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Feed-->
         <scene sceneID="D36-Ko-woH">
@@ -194,13 +189,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Novo Material" id="Tap-96-1s2">
                         <barButtonItem key="backBarButtonItem" title=" " id="6o2-e8-kbJ"/>
-                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="agc-vO-TSf">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="agc-vO-TSf">
                             <color key="tintColor" red="0.59215686270000001" green="0.89019607840000003" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="didTouchButtonCancel:" destination="2kA-IY-NAJ" id="Tfq-pK-xxu"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="opP-yS-2CV">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="opP-yS-2CV">
                             <color key="tintColor" red="0.59215686270000001" green="0.89019607840000003" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="didTouchButtonSave:" destination="2kA-IY-NAJ" id="yxQ-cJ-Wxv"/>
@@ -243,7 +238,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Disciplinas" id="aVb-kd-ruF">
                         <barButtonItem key="backBarButtonItem" title=" " id="PYJ-gm-C1E"/>
-                        <barButtonItem key="rightBarButtonItem" title="Escolher" id="pFx-4j-kGE">
+                        <barButtonItem key="rightBarButtonItem" title="Pick" id="pFx-4j-kGE">
                             <color key="tintColor" red="0.59215686270000001" green="0.89019607840000003" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="didTouchButtonSelect:" destination="NfI-Zq-4mH" id="4Cz-xd-niJ"/>
@@ -263,7 +258,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="selectedImageTintColor" red="0.59215686270000001" green="0.89019607840000003" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.59215686270000001" green="0.89019607840000003" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="c63-mu-Z3v" kind="relationship" relationship="viewControllers" id="kC6-dq-lxf"/>
@@ -284,6 +279,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
+                            <color key="textColor" red="0.59215686270000001" green="0.89019607840000003" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="jOg-42-8CS" kind="relationship" relationship="rootViewController" id="ipD-UM-idx"/>
@@ -319,16 +318,16 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-Book-100" translatesAutoresizingMaskIntoConstraints="NO" id="Ao7-Jy-D6F">
                                                     <rect key="frame" x="8" y="8" width="25" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3f-zW-6kd">
                                                     <rect key="frame" x="41" y="12" width="274" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="disciplineIcon" destination="Ao7-Jy-D6F" id="OD6-kb-ApU"/>
@@ -366,6 +365,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
+                            <color key="textColor" red="0.59215686270000001" green="0.89019607840000003" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -397,7 +400,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E42-Z3-Vax">
                                                     <rect key="frame" x="31" y="11" width="64" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -450,6 +453,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
+                            <color key="textColor" red="0.59215686270000001" green="0.89019607840000003" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -462,7 +469,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-Book-100" width="50" height="50"/>
+        <image name="icons8-Book-100" width="32" height="32"/>
         <image name="newspaper (1)" width="20" height="20"/>
         <image name="open-book-20" width="20" height="20"/>
         <image name="teacher-briefcase-20" width="20" height="20"/>

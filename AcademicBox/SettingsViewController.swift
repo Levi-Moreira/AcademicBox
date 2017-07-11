@@ -14,18 +14,11 @@ class SettingsViewController: UITableViewController {
     @IBOutlet weak var settingsItem: UINavigationItem!
     
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let red = CGFloat(151/255)
-        let gree = CGFloat(227/255)
-        let blue = CGFloat(232/255)
-        
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor(red: red, green: gree, blue: blue, alpha: 1.0)]
-        
-        
-        
-        
-//        settingsItem.titleView?.tintColor = UIColor(red: red, green: gree, blue: blue, alpha: 1.0)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

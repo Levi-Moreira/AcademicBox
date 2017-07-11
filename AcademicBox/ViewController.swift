@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FBSDKCoreKit
 import FBSDKLoginKit
 
 
@@ -114,35 +115,36 @@ loginButton.layer.borderWidth = 1.0
     }
     
     
-    @IBAction func didTapSignInFacebook(_ sender: UIButton) {
-        
-        let loginManager = FBSDKLoginManager()
-        loginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
-            if error == nil {
-                
-                self.indicator.stopAnimating()
-                
-                let storyboard = UIStoryboard(name: "Menu", bundle: nil)
-                
-                let VC1 = storyboard.instantiateViewController(withIdentifier: "MainMenuNavigation") as! UINavigationController
-                
-                let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-                
-                Auth.auth().signIn(with: credential) { (user, error) in
-                    
-                }
-                
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.window?.rootViewController = VC1
-            } else {
-                
-                self.indicator.stopAnimating()
-                self.showDialog(with: self.KFillAuthenticationAlertText)
-            }
-        }
-        
-    }
+   //AQUI
     
+        @IBAction func didTapSignInFacebook(_ sender: UIButton) {
+            let loginManager = FBSDKLoginManager()
+            loginManager.logIn(withReadPermissions: ["public_profile","email"], from: self) { (result, error) in
+                if error == nil {
+                    
+                    self.indicator.stopAnimating()
+                    
+                    let storyboard = UIStoryboard(name: "Menu", bundle: nil)
+                   
+                    
+                    //let credential = FacebookAuthProvider.creden3tial(withAccessToken: FBSDKAccessToken.current().tokenString)
+                    
+                   
+                    if let feedViewController = storyboard.instantiateInitialViewController() {
+                        self.present(feedViewController, animated:true, completion: nil)
+                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                        appDelegate.window?.rootViewController = feedViewController
+                    }
+                    
+                   } else {
+                    
+                    self.indicator.stopAnimating()
+                    self.showDialog(with: self.KFillAuthenticationAlertText)
+                }
+            }
+            
+    }
+
     
     
     func signInToFirebase(email: String, password: String){
