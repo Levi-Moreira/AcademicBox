@@ -397,7 +397,6 @@
 				TargetAttributes = {
 					A21030461EE5EEDC0026E0D4 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = YE6GS5VH8M;
 						ProvisioningStyle = Automatic;
 					};
 					A210305A1EE5EEDC0026E0D4 = {
@@ -781,7 +780,7 @@
 			baseConfigurationReference = E15FED8C537066ED8C4BECCA /* Pods-AcademicBox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = YE6GS5VH8M;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AcademicBox",
@@ -800,7 +799,7 @@
 			baseConfigurationReference = 6F2AEDA79929C019DF84B5FF /* Pods-AcademicBox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = YE6GS5VH8M;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AcademicBox",
