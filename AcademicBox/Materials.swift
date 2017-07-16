@@ -19,6 +19,8 @@ class Materials: NSObject {
     var images = [Material]()
     var uploadedImages = 0
     var uploadedImagesError = 0
+    var user = AppUser()
+    var date = Date()
     
     let discipline = Discipline(name: "")
     
@@ -36,6 +38,10 @@ class Materials: NSObject {
         for imageJson in imagesJson {
             self.images.append(Material(kind: .image, key: imageJson.stringValue))
         }
+        self.user.id = json["user"]["id"].stringValue
+        self.user.email = json["user"]["email"].stringValue
+        self.discipline.name = json["discipline"]["name"].stringValue
+        self.date = json["date"].stringValue.date
     }
     
     static func all(completionBlock: @escaping ([Materials]?) -> Void) {
@@ -68,7 +74,10 @@ class Materials: NSObject {
         self.images.append(image)
     }
     
-    func upload(completionBlock: @escaping (_ error: Error?) -> Void) {
+    func upload(user: AppUser, completionBlock: @escaping (_ error: Error?) -> Void) {
+        
+        self.user.id = user.id
+        self.user.email = user.email
         
         Materials.reference.childByAutoId().setValue(self.toJson()) { [weak self] (error, reference) in
             
@@ -141,10 +150,19 @@ class Materials: NSObject {
     }
     
     func toJson() -> [String: Any] {
-        let discipline: [String: Any] = [self.discipline.name.snakerized: self.discipline.name]
+        let discipline: [String: Any] = [
+            "id": self.discipline.name.snakerized,
+            "name": self.discipline.name
+        ]
+        let userDict: [String: Any] = [
+            "id": self.user.id,
+            "name": self.user.name
+        ]
         return [
             "name": self.name,
-            "discipline": discipline
+            "date": self.date.string,
+            "discipline": discipline,
+            "user": userDict
         ]
     }
     

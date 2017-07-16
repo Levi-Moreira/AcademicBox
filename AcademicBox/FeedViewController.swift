@@ -24,7 +24,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
-//        self.observeChanges()
         
         self.user.saveUserToCloud()
         
@@ -42,6 +41,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func setupView() {
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.estimatedRowHeight = 66.0
+        self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
     
@@ -50,7 +51,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             
             guard let materials = materials else {
-                // TODO Handle error
+                self?.presentUnknownError(completion: nil)
                 return
             }
             
@@ -74,40 +75,10 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCellFeed", for: indexPath)
-        cell.textLabel?.text = self.materials[indexPath.row].name
+        if let cell = cell as? FeedTableViewCell {
+            cell.fill(material: self.materials[indexPath.row])
+        }
         return cell
-    }
-    
-    private func observeChanges() {
-        
-        
-//        let query = self.reference.queryLimited(toFirst: 2)
-        
-        
-//        self.reference.child("users").observe(.value, with: { [weak self] (snapshot) in
-//            
-//            if !snapshot.exists() {
-//                return
-//            }
-//            
-//            if let dict = snapshot.value as? [String: String] {
-//                let json = JSON(dict)
-//                print(json["name"].stringValue)
-//            }
-        
-//            self?.materials.removeAll()
-//            for item in snapshot.children {
-//                if let item = item as? DataSnapshot,
-//                    let value = item.value as? [String: String] {
-//                    self?.materials.append(Material(json: JSON(value)))
-//                }
-//            }
-//            
-//            self?.tableView.reloadData()
-            
-            
-//        })
-    
     }
     
     

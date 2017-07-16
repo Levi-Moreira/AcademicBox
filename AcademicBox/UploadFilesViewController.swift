@@ -157,7 +157,7 @@ class UploadFilesViewController: UITableViewController, UIImagePickerControllerD
         
         let shouldUploadImages = !self.material.images.isEmpty
         
-        self.material.upload { [weak self] error in
+        self.material.upload(user: self.user) { [weak self] error in
             
             if let _ = error {
                 self?.presentUnknownError(completion: nil)

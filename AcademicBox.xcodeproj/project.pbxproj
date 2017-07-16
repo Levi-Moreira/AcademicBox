@@ -21,6 +21,10 @@
 		28C7F3951EEBAAF500FE83A0 /* Professor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C7F3941EEBAAF500FE83A0 /* Professor.swift */; };
 		28E66F351F1AF3FE00D8D485 /* MaterialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66F341F1AF3FE00D8D485 /* MaterialsViewController.swift */; };
 		28E66F381F1AFDAF00D8D485 /* MaterialsImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66F371F1AFDAF00D8D485 /* MaterialsImagesCollectionViewCell.swift */; };
+		28E66F3A1F1B977500D8D485 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66F391F1B977500D8D485 /* FeedTableViewCell.swift */; };
+		28E66F3C1F1B9FE000D8D485 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66F3B1F1B9FE000D8D485 /* Date.swift */; };
+		28E66F3E1F1BA15400D8D485 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66F3D1F1BA15400D8D485 /* DateFormatter.swift */; };
+		28E66F401F1BA17F00D8D485 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66F3F1F1BA17F00D8D485 /* String.swift */; };
 		50A85D663F387BA9206A07A2 /* Pods_AcademicBoxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C2497D5293F079A7C46357 /* Pods_AcademicBoxUITests.framework */; };
 		75AAD6B3E92619E6EA7AAFE5 /* Pods_AcademicBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4859F8628BE1BF1840586A /* Pods_AcademicBox.framework */; };
 		A20556E71F0C18430016C105 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A20556E61F0C18430016C105 /* bg.png */; };
@@ -80,6 +84,10 @@
 		28C7F3941EEBAAF500FE83A0 /* Professor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Professor.swift; sourceTree = "<group>"; };
 		28E66F341F1AF3FE00D8D485 /* MaterialsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialsViewController.swift; sourceTree = "<group>"; };
 		28E66F371F1AFDAF00D8D485 /* MaterialsImagesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialsImagesCollectionViewCell.swift; sourceTree = "<group>"; };
+		28E66F391F1B977500D8D485 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		28E66F3B1F1B9FE000D8D485 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		28E66F3D1F1BA15400D8D485 /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		28E66F3F1F1BA17F00D8D485 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		327BBFD1882D02037E8CBEDF /* Pods-AcademicBoxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcademicBoxTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcademicBoxTests/Pods-AcademicBoxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F2AEDA79929C019DF84B5FF /* Pods-AcademicBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcademicBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcademicBox/Pods-AcademicBox.release.xcconfig"; sourceTree = "<group>"; };
 		A20556E61F0C18430016C105 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
@@ -198,6 +206,7 @@
 			children = (
 				2863A1451F0990A800D541BD /* UploadImagesCollectionViewCell.swift */,
 				A2ED692E1F140EE2004D2119 /* TableViewCellDisciplinesTableViewCell.swift */,
+				28E66F391F1B977500D8D485 /* FeedTableViewCell.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -213,6 +222,9 @@
 			isa = PBXGroup;
 			children = (
 				2847C63E1F0C778D003AD840 /* UIViewController.swift */,
+				28E66F3B1F1B9FE000D8D485 /* Date.swift */,
+				28E66F3D1F1BA15400D8D485 /* DateFormatter.swift */,
+				28E66F3F1F1BA17F00D8D485 /* String.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -627,6 +639,7 @@
 			files = (
 				2863A1461F0990A800D541BD /* UploadImagesCollectionViewCell.swift in Sources */,
 				A27166E81EE9E43000B2AE89 /* MainMenuViewController.swift in Sources */,
+				28E66F401F1BA17F00D8D485 /* String.swift in Sources */,
 				2847C63C1F0C6AA9003AD840 /* DisciplineSelectionViewController.swift in Sources */,
 				28E66F351F1AF3FE00D8D485 /* MaterialsViewController.swift in Sources */,
 				A210304D1EE5EEDC0026E0D4 /* ViewController.swift in Sources */,
@@ -634,12 +647,15 @@
 				2863A1441F09800600D541BD /* MaterialKind.swift in Sources */,
 				28303BBF1EEB30A600E59C50 /* FeedViewController.swift in Sources */,
 				28C7F3931EEBAAD700FE83A0 /* Discipline.swift in Sources */,
+				28E66F3A1F1B977500D8D485 /* FeedTableViewCell.swift in Sources */,
 				28303BC51EEB4B4300E59C50 /* UploadFilesViewController.swift in Sources */,
 				A2ED692F1F140EE2004D2119 /* TableViewCellDisciplinesTableViewCell.swift in Sources */,
 				2889E4C01EEE254A00AA4EAB /* AppUser.swift in Sources */,
 				2843AF771EEF7007000F9644 /* DisciplinesViewController.swift in Sources */,
 				2863A1481F0993F500D541BD /* Materials.swift in Sources */,
 				28C7F3951EEBAAF500FE83A0 /* Professor.swift in Sources */,
+				28E66F3E1F1BA15400D8D485 /* DateFormatter.swift in Sources */,
+				28E66F3C1F1B9FE000D8D485 /* Date.swift in Sources */,
 				28303BC71EEB4B9700E59C50 /* Material.swift in Sources */,
 				2847C63F1F0C778D003AD840 /* UIViewController.swift in Sources */,
 				A210304B1EE5EEDC0026E0D4 /* AppDelegate.swift in Sources */,

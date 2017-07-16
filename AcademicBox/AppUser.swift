@@ -10,11 +10,11 @@ import Foundation
 import FirebaseAuth
 import FirebaseDatabase
 
-class AppUser {
+class AppUser: NSObject {
 
-    var name: String
-    var email: String
-    var id: String
+    var name: String = ""
+    var email: String = ""
+    var id: String = ""
     
     var disciplines = [Discipline]()
     
@@ -23,6 +23,10 @@ class AppUser {
     
     static var loggedUser: AppUser {
         return AppUser(user: Auth.auth().currentUser)
+    }
+    
+    override init() {
+        super.init()
     }
     
     init(id: String, name: String, email: String) {
