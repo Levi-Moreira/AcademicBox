@@ -20,6 +20,7 @@ class Material {
     var image: UIImage?
     var kind: MaterialKind
     var baseName = ""
+    var key = ""
     
     var randomImageFileName: String {
         var r = [UInt32]()
@@ -29,6 +30,11 @@ class Material {
     
     init(kind: MaterialKind) {
         self.kind = kind
+    }
+    
+    init(kind: MaterialKind, key: String) {
+        self.kind = kind
+        self.key = key
     }
     
     var rootReference: StorageReference {
@@ -48,13 +54,13 @@ class Material {
         guard let image = self.image,
             let data = UIImageJPEGRepresentation(image, 0.0) else { return }
         
-        let name = self.randomImageFileName
+        self.key = self.randomImageFileName
         
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
         
         let reference = self.materialsBucketReference
-            .child(name)
+            .child(self.key)
         self.path = reference.fullPath
         
         let uploadTask = reference.putData(data, metadata: metadata)

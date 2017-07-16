@@ -32,12 +32,23 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
 //        Professor.saveProfessors()
 //        Discipline.saveDisciplines()
+        
+        self.loadMaterials()
+        
     }
     
     func setupView() {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+    }
+    
+    func loadMaterials() {
+        Materials.all { (materials, error) in
+            
+            
+            
+        }
     }
     
     

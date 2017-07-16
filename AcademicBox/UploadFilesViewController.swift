@@ -209,6 +209,7 @@ class UploadFilesViewController: UITableViewController, UIImagePickerControllerD
     private func didFinishUploadingImages() {
         if !self.imageUploadError {
             print("All images have been successfully uploaded")
+            self.material.updateImagesReferences()
             self.presentSuccessAlert(withMessage: "Material successfully uploaded", completion: {
                 self.dismiss(animated: true, completion: nil)
             })

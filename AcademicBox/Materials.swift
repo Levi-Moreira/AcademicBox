@@ -8,20 +8,48 @@
 
 import Foundation
 import FirebaseDatabase
+import SwiftyJSON
 
 class Materials: NSObject {
     
     private let kMaterialsPath = "materials"
     
     var name = ""
+    var key = ""
     var images = [Material]()
     var uploadedImages = 0
     var uploadedImagesError = 0
     
     let discipline = Discipline(name: "")
     
-    var reference: DatabaseReference {
+    static var reference: DatabaseReference {
         return Database.database().reference(withPath: "materials")
+    }
+    
+    override init() {
+        super.init()
+    }
+    
+    init(json: JSON) {
+        self.name = json["name"].stringValue
+        let imagesJson = json["images"].arrayValue
+        for imageJson in imagesJson {
+            self.images.append(Material(kind: .image, key: imageJson.stringValue))
+        }
+    }
+    
+    static func all(completionBlock: ([Materials], Error?) -> Void) {
+        
+        Materials.reference.observe(.childAdded, with: { (snapshot) in
+            
+            if let value = snapshot.value {
+                let json = JSON(value)
+                let material = Materials(json: json)
+                print(json)
+            }
+            
+        })
+        
     }
     
     func add(image: Material) {
@@ -30,7 +58,7 @@ class Materials: NSObject {
     
     func upload(completionBlock: @escaping (_ error: Error?) -> Void) {
         
-        self.reference.childByAutoId().setValue(self.toJson()) { [weak self] (error, reference) in
+        Materials.reference.childByAutoId().setValue(self.toJson()) { [weak self] (error, reference) in
             
             if let _ = error {
                 completionBlock(error)
@@ -38,6 +66,7 @@ class Materials: NSObject {
             }
             
             print("Materials \(reference.key) saved")
+            self?.key = reference.key
             if let images = self?.images {
                 images.forEach { $0.baseName = reference.key }
             }
@@ -69,6 +98,26 @@ class Materials: NSObject {
         }
     }
     
+    func updateImagesReferences() {
+        
+        if self.key.isEmpty { return }
+        
+        var names = [String]()
+        self.images.forEach { names.append($0.key) }
+        let dict: [String: [String]] = ["images": names]
+        
+        Materials.reference.child(self.key).updateChildValues(dict) { (error, reference) in
+            
+            if let _ = error {
+                return
+            }
+            
+            print(reference)
+            
+        }
+        
+    }
+    
     func uploadAudios() {
     }
     
@@ -78,10 +127,6 @@ class Materials: NSObject {
     func didFinishUploadingImages() {
     }
     
-    //    init(json: JSON) {
-    //        self.name = json["name"].stringValue
-    //    }
-    //
     func toJson() -> [String: Any] {
         let discipline: [String: Any] = [self.discipline.name.snakerized: self.discipline.name]
         return [
