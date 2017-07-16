@@ -22,7 +22,9 @@ class DisciplinesViewController: UIViewController, UITableViewDataSource, UITabl
     }
 
     func loadDisciplines() {
+        self.showLoader()
         self.user.loadDisciplines { [weak self] disciplines in
+            self?.hideLoader()
             self?.disciplines.append(contentsOf: disciplines)
             self?.tableView.reloadData()
         }

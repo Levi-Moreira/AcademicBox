@@ -13,7 +13,7 @@ import FBSDKLoginKit
 
 
 class ViewController: UIViewController {
-
+    
     
     let kFillEmailAlertText = "Preencha seu Email"
     
@@ -24,8 +24,6 @@ class ViewController: UIViewController {
     var isUserIn = false
     
     var handle: AuthStateDidChangeListenerHandle?
-    
-    var indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     
     @IBOutlet weak var tvEmail: UITextField!
     
@@ -41,22 +39,26 @@ class ViewController: UIViewController {
         self.tvEmail.text = "alan.jeferson11@gmail.com"
         self.tvPassword.text = "password"
         
-        indicator.frame = CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0)
-        indicator.center = view.center
-        view.addSubview(indicator)
-        indicator.bringSubview(toFront: view)
+//        indicator.frame = CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0)
+//        indicator.center = view.center
+//        view.addSubview(indicator)
+//        indicator.bringSubview(toFront: view)
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-loginButton.layer.borderWidth = 1.0
+        loginButton.layer.borderWidth = 1.0
         loginButton.layer.borderColor = UIColor.white.cgColor
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = UIColor.clear
-
+        
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -78,13 +80,13 @@ loginButton.layer.borderWidth = 1.0
         
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        Auth.auth().removeStateDidChangeListener(handle!)
-//    }
+    //    override func viewWillDisappear(_ animated: Bool) {
+    //        Auth.auth().removeStateDidChangeListener(handle!)
+    //    }
     
     @IBAction func didTapSignIn(_ sender: UIButton) {
-    
-        indicator.startAnimating()
+        
+        self.hideLoader()
         guard let email = tvEmail.text else {
             return
         }
@@ -115,46 +117,26 @@ loginButton.layer.borderWidth = 1.0
     }
     
     
-   //AQUI
+    //AQUI
     
-        @IBAction func didTapSignInFacebook(_ sender: UIButton) {
-            let loginManager = FBSDKLoginManager()
-            loginManager.logIn(withReadPermissions: ["public_profile","email"], from: self) { (result, error) in
-                if error == nil {
-                    
-                    self.indicator.stopAnimating()
-                    
-                    let storyboard = UIStoryboard(name: "Menu", bundle: nil)
-                   
-                    
-                    //let credential = FacebookAuthProvider.creden3tial(withAccessToken: FBSDKAccessToken.current().tokenString)
-                    
-                   
-                    if let feedViewController = storyboard.instantiateInitialViewController() {
-                        self.present(feedViewController, animated:true, completion: nil)
-                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                        appDelegate.window?.rootViewController = feedViewController
-                    }
-                    
-                   } else {
-                    
-                    self.indicator.stopAnimating()
-                    self.showDialog(with: self.KFillAuthenticationAlertText)
-                }
-            }
+    @IBAction func didTapSignInFacebook(_ sender: UIButton) {
+        
+        self.showLoader()
+        
+        let loginManager = FBSDKLoginManager()
+        loginManager.logIn(withReadPermissions: ["public_profile","email"], from: self) { (result, error) in
             
-    }
-
-    
-    
-    func signInToFirebase(email: String, password: String){
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            self.hideLoader()
+            
             if error == nil {
                 
-                self.indicator.stopAnimating()
                 
                 let storyboard = UIStoryboard(name: "Menu", bundle: nil)
-
+                
+                
+                //let credential = FacebookAuthProvider.creden3tial(withAccessToken: FBSDKAccessToken.current().tokenString)
+                
+                
                 if let feedViewController = storyboard.instantiateInitialViewController() {
                     self.present(feedViewController, animated:true, completion: nil)
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -163,14 +145,41 @@ loginButton.layer.borderWidth = 1.0
                 
             } else {
                 
-                self.indicator.stopAnimating()
+                self.showDialog(with: self.KFillAuthenticationAlertText)
+            }
+        }
+        
+    }
+    
+    
+    
+    func signInToFirebase(email: String, password: String){
+        
+        self.showLoader()
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            
+            self.hideLoader()
+            
+            if error == nil {
+                
+                let storyboard = UIStoryboard(name: "Menu", bundle: nil)
+                
+                if let feedViewController = storyboard.instantiateInitialViewController() {
+                    self.present(feedViewController, animated:true, completion: nil)
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.window?.rootViewController = feedViewController
+                }
+                
+            } else {
+                
                 self.showDialog(with: self.KFillAuthenticationAlertText)
             }
         }
         
         
     }
-
+    
     
     func showDialog(with : String){
         let alert = UIAlertController(title: "Atenção", message: with, preferredStyle: UIAlertControllerStyle.alert)
@@ -179,13 +188,13 @@ loginButton.layer.borderWidth = 1.0
         
         // show the alert
         self.present(alert, animated: true, completion: nil)
-
+        
     }
     
     
     @IBAction func didClickOnCreateAccount(_ sender: UIButton) {
         performSegue(withIdentifier: "joinSegue", sender: nil)
     }
-
+    
 }
 

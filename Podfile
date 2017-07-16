@@ -14,6 +14,7 @@ target 'AcademicBox' do
 	pod 'FBSDKLoginKit'
 	pod 'FBSDKCoreKit'
 	pod 'FBSDKShareKit'
+	pod 'ARSLineProgress'
 end
 
 target 'AcademicBoxTests' do

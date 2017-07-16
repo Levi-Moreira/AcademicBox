@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import ARSLineProgress
 
 extension UIViewController {
     
@@ -29,6 +30,14 @@ extension UIViewController {
     
     func presentUnknownError(completion: (() -> Void)?) {
         self.presentErrorAlert(withMessage: "An error has ocurred, please try again later", completion: completion)
+    }
+    
+    func showLoader() {
+        ARSLineProgress.show()
+    }
+    
+    func hideLoader() {
+        ARSLineProgress.hide()
     }
     
 }

@@ -166,9 +166,12 @@ class UploadFilesViewController: UITableViewController, UIImagePickerControllerD
         
         let shouldUploadImages = !self.material.images.isEmpty
         
+        self.showLoader()
+        
         self.material.upload(user: self.user) { [weak self] error in
             
             if let _ = error {
+                self?.hideLoader()
                 self?.presentUnknownError(completion: nil)
                 return
             }
@@ -219,11 +222,13 @@ class UploadFilesViewController: UITableViewController, UIImagePickerControllerD
                 self.didFinishUploadingMaterials()
             })
         } else {
+            self.hideLoader()
             self.presentErrorAlert(withMessage: "An error ocurred.", completion: nil)
         }
     }
     
     private func didFinishUploadingMaterials() {
+        self.hideLoader()
         self.presentSuccessAlert(withMessage: "Material successfully uploaded", completion: {
             self.dismiss(animated: true, completion: nil)
         })

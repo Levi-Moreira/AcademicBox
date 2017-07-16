@@ -163,7 +163,8 @@ class Materials: NSObject {
         ]
         let userDict: [String: Any] = [
             "id": self.user.id,
-            "name": self.user.name
+            "name": self.user.name,
+            "email": self.user.email
         ]
         return [
             "name": self.name,
