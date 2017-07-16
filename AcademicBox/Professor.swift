@@ -31,7 +31,8 @@ class Professor {
         return [
             Professor(name: "Francisco José", bio: "The guy is really dark"),
             Professor(name: "Ricardo Guedes", bio: "Turtle guy"),
-            Professor(name: "Ernani", bio: "Best professor ever")
+            Professor(name: "Ernani", bio: "Best professor ever"),
+            Professor(name: "Carlos Hairon", bio: "Nice guy")
         ]
     }
     

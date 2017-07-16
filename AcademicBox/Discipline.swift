@@ -31,9 +31,10 @@ class Discipline {
     static var disciplines: [Discipline] {
         let professors = Professor.professors
         var disciplines = [Discipline]()
-        disciplines.append(Discipline(name: "Sistemas Lineares", professor: professors[0]))
-        disciplines.append(Discipline(name: "Lógica de Programação 1", professor: professors[1]))
-        disciplines.append(Discipline(name: "Estrutura de Dados", professor: professors[2]))
+        disciplines.append(Discipline(name: "Linear Systems", professor: professors[0]))
+        disciplines.append(Discipline(name: "Programming Logic 1", professor: professors[1]))
+        disciplines.append(Discipline(name: "Data Structure", professor: professors[2]))
+        disciplines.append(Discipline(name: "Information System Project", professor: professors[3]))
         return disciplines
     }
     
