@@ -13,6 +13,7 @@ class MaterialsViewController: UIViewController, UICollectionViewDataSource, UIC
     @IBOutlet weak var collectionView: UICollectionView!
     
     let kCollectionViewCellImagesIdentifier = "CollectionViewCellMaterialsImages"
+    let kMaterialsHeaderView = "MaterialsHeaderView"
     
     var material: Materials!
     
@@ -86,6 +87,19 @@ class MaterialsViewController: UIViewController, UICollectionViewDataSource, UIC
         let i = imagesPerRow - 1
         let width: CGFloat = (UIScreen.main.bounds.width - ((2 + i) * imageSpacing)) / imagesPerRow
         return CGSize(width: width, height: width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        let reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: self.kMaterialsHeaderView, for: indexPath)
+        
+        if kind == UICollectionElementKindSectionHeader,
+            let header = reusableView as? MaterialsDetailsCollectionReusableView {
+            header.fill(material: self.material)
+        }
+        
+        return reusableView
+        
     }
 
 }

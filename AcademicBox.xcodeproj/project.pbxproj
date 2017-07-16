@@ -17,6 +17,7 @@
 		2863A1461F0990A800D541BD /* UploadImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863A1451F0990A800D541BD /* UploadImagesCollectionViewCell.swift */; };
 		2863A1481F0993F500D541BD /* Materials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863A1471F0993F500D541BD /* Materials.swift */; };
 		2889E4C01EEE254A00AA4EAB /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2889E4BF1EEE254A00AA4EAB /* AppUser.swift */; };
+		28C1DEB91F1BC6CD00CD215D /* MaterialsDetailsCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C1DEB81F1BC6CD00CD215D /* MaterialsDetailsCollectionReusableView.swift */; };
 		28C7F3931EEBAAD700FE83A0 /* Discipline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C7F3921EEBAAD700FE83A0 /* Discipline.swift */; };
 		28C7F3951EEBAAF500FE83A0 /* Professor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C7F3941EEBAAF500FE83A0 /* Professor.swift */; };
 		28E66F351F1AF3FE00D8D485 /* MaterialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E66F341F1AF3FE00D8D485 /* MaterialsViewController.swift */; };
@@ -80,6 +81,7 @@
 		2863A1451F0990A800D541BD /* UploadImagesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadImagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		2863A1471F0993F500D541BD /* Materials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Materials.swift; sourceTree = "<group>"; };
 		2889E4BF1EEE254A00AA4EAB /* AppUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
+		28C1DEB81F1BC6CD00CD215D /* MaterialsDetailsCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialsDetailsCollectionReusableView.swift; sourceTree = "<group>"; };
 		28C7F3921EEBAAD700FE83A0 /* Discipline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Discipline.swift; sourceTree = "<group>"; };
 		28C7F3941EEBAAF500FE83A0 /* Professor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Professor.swift; sourceTree = "<group>"; };
 		28E66F341F1AF3FE00D8D485 /* MaterialsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialsViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				A21030511EE5EEDC0026E0D4 /* Assets.xcassets */,
 				A21030531EE5EEDC0026E0D4 /* LaunchScreen.storyboard */,
 				A27166E91EE9F6A700B2AE89 /* Menu.storyboard */,
+				28C1DEB81F1BC6CD00CD215D /* MaterialsDetailsCollectionReusableView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2863A1461F0990A800D541BD /* UploadImagesCollectionViewCell.swift in Sources */,
+				28C1DEB91F1BC6CD00CD215D /* MaterialsDetailsCollectionReusableView.swift in Sources */,
 				A27166E81EE9E43000B2AE89 /* MainMenuViewController.swift in Sources */,
 				28E66F401F1BA17F00D8D485 /* String.swift in Sources */,
 				2847C63C1F0C6AA9003AD840 /* DisciplineSelectionViewController.swift in Sources */,
