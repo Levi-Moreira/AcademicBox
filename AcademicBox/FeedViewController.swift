@@ -16,7 +16,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     let kSegueToUpload = "SegueFromFeedToUpload"
     let reference = Database.database().reference()//(withPath: "users")
-    var materials = [Material]()
+    var materials = [Materials]()
     var user: AppUser = AppUser.loggedUser
     
     override func viewDidLoad() {
@@ -44,9 +44,16 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func loadMaterials() {
-        Materials.all { (materials, error) in
+        Materials.all { [weak self] materials in
             
             
+            guard let materials = materials else {
+                // TODO Handle error
+                return
+            }
+            
+            self?.materials.append(contentsOf: materials)
+            self?.tableView.reloadData()
             
         }
     }
@@ -64,7 +71,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCellFeed", for: indexPath)
-//        cell.textLabel?.text = self.materials[indexPath.row].name
+        cell.textLabel?.text = self.materials[indexPath.row].name
         return cell
     }
     

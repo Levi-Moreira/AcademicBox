@@ -38,14 +38,26 @@ class Materials: NSObject {
         }
     }
     
-    static func all(completionBlock: ([Materials], Error?) -> Void) {
+    static func all(completionBlock: @escaping ([Materials]?) -> Void) {
         
-        Materials.reference.observe(.childAdded, with: { (snapshot) in
+        Materials.reference.observe(.value, with: { (snapshot) in
             
             if let value = snapshot.value {
+                
+                var materials = [Materials]()
+                
                 let json = JSON(value)
-                let material = Materials(json: json)
-                print(json)
+                for (i, j) in json.makeIterator() {
+                    let material = Materials(json: j)
+                    material.key = i
+                    print(material)
+                    materials.append(material)
+                }
+                
+                completionBlock(materials)
+                
+            } else {
+                completionBlock(nil)
             }
             
         })
