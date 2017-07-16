@@ -15,6 +15,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     
     let kSegueToUpload = "SegueFromFeedToUpload"
+    let kSegueToMaterials = "SegueFromFeedToMaterials"
+    
     let reference = Database.database().reference()//(withPath: "users")
     var materials = [Materials]()
     var user: AppUser = AppUser.loggedUser
@@ -108,6 +110,14 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     
+    // MARK:- UITableView Delegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: kSegueToMaterials, sender: self.materials[indexPath.row])
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == kSegueToUpload,
             let nav = segue.destination as? UINavigationController,
@@ -116,6 +126,10 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self?.didUploadMaterial(material: material)
             }
             
+        } else if segue.identifier == kSegueToMaterials,
+            let controller = segue.destination as? MaterialsViewController,
+            let material = sender as? Materials {
+            controller.material = material
         }
     }
 

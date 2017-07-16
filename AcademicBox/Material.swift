@@ -80,7 +80,28 @@ class Material {
         
     }
     
-    func download() {
+    func download(completionHandler: @escaping (Error?) -> Void) {
+        
+        let reference = self.materialsBucketReference.child(self.key)
+        
+        reference.getData(maxSize: 1024*1024*5) { [weak self] (data, error) in
+            
+            guard let data = data else {
+                // TODO Handle errors
+                return
+            }
+            
+            guard let image = UIImage(data: data) else {
+                // TODO Handle errors
+                return
+            }
+            
+            self?.image = image
+            
+            completionHandler(nil)
+            
+        }
+        
     }
     
 }

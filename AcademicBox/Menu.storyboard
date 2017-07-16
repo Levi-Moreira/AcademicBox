@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ax1-k3-qRC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ax1-k3-qRC">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,6 +11,65 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Materials View Controller-->
+        <scene sceneID="524-e0-hl6">
+            <objects>
+                <viewController id="HJ9-Oi-DBP" customClass="MaterialsViewController" customModule="AcademicBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6zg-q1-ny9"/>
+                        <viewControllerLayoutGuide type="bottom" id="MQV-WI-iWw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="O7N-eM-7jW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="O69-EK-aZS">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <color key="backgroundColor" red="0.74509805439999999" green="0.0" blue="0.050980392839999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pEh-Or-KtN">
+                                    <size key="itemSize" width="87" height="91"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCellMaterialsImages" id="MXE-0C-6ge" customClass="MaterialsImagesCollectionViewCell" customModule="AcademicBox" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="87" height="91"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="87" height="91"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AHe-Bi-lFu">
+                                                    <rect key="frame" x="-66" y="-9" width="240" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.11652074749999999" green="0.52779680490000003" blue="0.1742231548" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="image" destination="AHe-Bi-lFu" id="itP-0o-pWD"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="O69-EK-aZS" firstAttribute="top" secondItem="6zg-q1-ny9" secondAttribute="bottom" id="LQr-zY-7xH"/>
+                            <constraint firstItem="O69-EK-aZS" firstAttribute="leading" secondItem="O7N-eM-7jW" secondAttribute="leading" id="azH-h0-2jA"/>
+                            <constraint firstItem="MQV-WI-iWw" firstAttribute="top" secondItem="O69-EK-aZS" secondAttribute="bottom" id="e0g-i0-pYa"/>
+                            <constraint firstAttribute="trailing" secondItem="O69-EK-aZS" secondAttribute="trailing" id="yDe-rb-xW2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="O69-EK-aZS" id="lBE-mH-2v6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0SM-DM-2dk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="963.75" y="-1508.4507042253522"/>
+        </scene>
         <!--Feed-->
         <scene sceneID="D36-Ko-woH">
             <objects>
@@ -57,6 +116,7 @@
                     <connections>
                         <outlet property="tableView" destination="azx-5l-Xtc" id="hAR-8D-fhD"/>
                         <segue destination="9Gs-RN-D3Y" kind="presentation" identifier="SegueFromFeedToUpload" id="QFh-Mk-iYJ"/>
+                        <segue destination="HJ9-Oi-DBP" kind="show" identifier="SegueFromFeedToMaterials" id="iSC-d0-7wC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DXP-m2-39x" userLabel="First Responder" sceneMemberID="firstResponder"/>
