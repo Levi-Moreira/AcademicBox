@@ -65,16 +65,16 @@ class UploadFilesViewController: UITableViewController, UIImagePickerControllerD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row < self.material.images.count {
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCollectionViewCellUploadImages, for: indexPath) as? UploadImagesCollectionViewCell {
-                cell.fill(material: self.material.images[indexPath.row])
-                return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCollectionViewCellUploadImages, for: indexPath)
+        if let cell = cell as? UploadImagesCollectionViewCell {
+            var image: Material?
+            if indexPath.row < self.material.images.count {
+                image = self.material.images[indexPath.row]
+            } else {
             }
-        } else {
-            // Add image
-            return collectionView.dequeueReusableCell(withReuseIdentifier: kCollectionViewCellUploadImages, for: indexPath)
+            cell.fill(material: image)
         }
-        return UICollectionViewCell()
+        return cell
     }
     
     // MARK:- CollectionView Data Source
@@ -95,7 +95,7 @@ class UploadFilesViewController: UITableViewController, UIImagePickerControllerD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row < self.material.images.count {
-            
+            self.presentActionSheetForImageRemoval(atIndex: indexPath.row)
         } else {
             self.presentActionSheetForImageSourceSelection()
         }
@@ -117,6 +117,15 @@ class UploadFilesViewController: UITableViewController, UIImagePickerControllerD
     
     @IBAction func didTouchButtonSave(_ sender: UIBarButtonItem) {
         self.uploadMaterial()
+    }
+    
+    func presentActionSheetForImageRemoval(atIndex index: Int) {
+        let sheet = UIAlertController(title: nil, message: "Remover Imagem?", preferredStyle: .actionSheet)
+        sheet.addAction(UIAlertAction(title: "Remover", style: .default, handler: { [weak self] (action) in
+            self?.removeImage(atIndex: index)
+        }))
+        sheet.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        self.present(sheet, animated: true, completion: nil)
     }
     
     func presentActionSheetForImageSourceSelection() {
@@ -255,6 +264,11 @@ class UploadFilesViewController: UITableViewController, UIImagePickerControllerD
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    func removeImage(atIndex index: Int) {
+        self.material.images.remove(at: index)
+        self.collectionViewImages.reloadData()
     }
     
 }

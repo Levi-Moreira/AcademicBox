@@ -12,8 +12,8 @@ class UploadImagesCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
-    func fill(material: Material) {
-        self.imageView.image = material.image
+    func fill(material: Material?) {
+        self.imageView.image = material?.image
     }
     
 }
