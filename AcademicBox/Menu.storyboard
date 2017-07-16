@@ -13,10 +13,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Materials View Controller-->
+        <!--Material-->
         <scene sceneID="524-e0-hl6">
             <objects>
-                <viewController id="HJ9-Oi-DBP" customClass="MaterialsViewController" customModule="AcademicBox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="HJ9-Oi-DBP" customClass="MaterialsViewController" customModule="AcademicBox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6zg-q1-ny9"/>
                         <viewControllerLayoutGuide type="bottom" id="MQV-WI-iWw"/>
@@ -25,30 +25,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="O69-EK-aZS">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="O69-EK-aZS">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" red="0.74509805439999999" green="0.0" blue="0.050980392839999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pEh-Or-KtN">
-                                    <size key="itemSize" width="87" height="91"/>
+                                    <size key="itemSize" width="223" height="194"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCellMaterialsImages" id="MXE-0C-6ge" customClass="MaterialsImagesCollectionViewCell" customModule="AcademicBox" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="87" height="91"/>
+                                        <rect key="frame" x="48.5" y="0.0" width="223" height="194"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="87" height="91"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="223" height="194"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AHe-Bi-lFu">
-                                                    <rect key="frame" x="-66" y="-9" width="240" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AHe-Bi-lFu">
+                                                    <rect key="frame" x="0.5" y="0.0" width="223" height="194"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.11652074749999999" green="0.52779680490000003" blue="0.1742231548" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="AHe-Bi-lFu" firstAttribute="centerX" secondItem="MXE-0C-6ge" secondAttribute="centerX" id="7Dh-qt-RN7"/>
+                                            <constraint firstItem="AHe-Bi-lFu" firstAttribute="width" secondItem="MXE-0C-6ge" secondAttribute="width" id="HH1-Qk-l6g"/>
+                                            <constraint firstItem="AHe-Bi-lFu" firstAttribute="centerY" secondItem="MXE-0C-6ge" secondAttribute="centerY" id="TMb-bw-bh1"/>
+                                            <constraint firstItem="AHe-Bi-lFu" firstAttribute="height" secondItem="MXE-0C-6ge" secondAttribute="height" id="ls9-Yi-k5d"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="image" destination="AHe-Bi-lFu" id="itP-0o-pWD"/>
                                         </connections>
@@ -64,6 +75,9 @@
                             <constraint firstAttribute="trailing" secondItem="O69-EK-aZS" secondAttribute="trailing" id="yDe-rb-xW2"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Material" id="uuK-Du-9wI">
+                        <barButtonItem key="backBarButtonItem" title=" " id="EF1-Su-mWL"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="O69-EK-aZS" id="lBE-mH-2v6"/>
                     </connections>
@@ -171,6 +185,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Feed" id="aX5-Tl-Sh5">
+                        <barButtonItem key="backBarButtonItem" title=" " id="pY7-bv-5dw"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="IRM-HJ-3M3">
                             <color key="tintColor" red="0.59215686274509804" green="0.8901960784313725" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -502,6 +517,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DpA-dw-XcZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.59215686270000001" green="0.89019607840000003" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>

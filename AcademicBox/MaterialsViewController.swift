@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MaterialsViewController: UIViewController, UICollectionViewDataSource {
+class MaterialsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -16,15 +16,20 @@ class MaterialsViewController: UIViewController, UICollectionViewDataSource {
     
     var material: Materials!
     
+    let imagesPerRow: CGFloat = 3
+    var imageSpacing: CGFloat = 4.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
     }
     
     func setupView() {
+        self.navigationItem.title = self.material.discipline.name
         self.collectionView.dataSource = self
+        self.collectionView.delegate = self
         self.collectionView.reloadData()
-        self.downloadImage(atIndex: 0)
+        self.downloadImages()
     }
     
     func downloadImages() {
@@ -60,6 +65,27 @@ class MaterialsViewController: UIViewController, UICollectionViewDataSource {
         
         return UICollectionViewCell()
         
+    }
+    
+    
+    // MARK:- CollectionView Layout
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: self.imageSpacing, left: self.imageSpacing, bottom: self.imageSpacing, right: self.imageSpacing)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return self.imageSpacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return self.imageSpacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let i = imagesPerRow - 1
+        let width: CGFloat = (UIScreen.main.bounds.width - ((2 + i) * imageSpacing)) / imagesPerRow
+        return CGSize(width: width, height: width)
     }
 
 }
