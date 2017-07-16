@@ -17,7 +17,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let kSegueToUpload = "SegueFromFeedToUpload"
     let kSegueToMaterials = "SegueFromFeedToMaterials"
     
-    let reference = Database.database().reference()//(withPath: "users")
+    let reference = Database.database().reference()
+    
     var materials = [Materials]()
     var user: AppUser = AppUser.loggedUser
     
@@ -31,8 +32,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         disciplines.forEach { self.user.add(discipline: $0) }
         self.user.saveDisciplines()
         
-//        Professor.saveProfessors()
-//        Discipline.saveDisciplines()
+        Professor.saveProfessors()
+        Discipline.saveDisciplines()
         
         self.loadMaterials()
         

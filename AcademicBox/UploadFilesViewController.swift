@@ -236,17 +236,18 @@ class UploadFilesViewController: UITableViewController, UIImagePickerControllerD
         if segue.identifier == kSegueToDisciplineSelection,
             let controller = segue.destination as? DisciplineSelectionViewController {
             controller.selectedIndex = self.disciplineIndex
-            controller.selectionBlock = { [weak self] (index, name) in
-                self?.didSelectDiscipline(atIndex: index, withName: name)
+            controller.selectionBlock = { [weak self] (index, discipline) in
+                self?.didSelectDiscipline(atIndex: index, discipline: discipline)
             }
         }
     }
     
     
-    private func didSelectDiscipline(atIndex index: Int, withName name: String) {
+    private func didSelectDiscipline(atIndex index: Int, discipline: Discipline) {
         self.disciplineIndex = index
-        self.material.discipline.name = name
-        self.textFieldDiscipline.text = name
+        self.material.discipline.name = discipline.name
+        self.material.discipline.professor = discipline.professor
+        self.textFieldDiscipline.text = discipline.name
     }
     
     

@@ -15,7 +15,7 @@ class DisciplineSelectionViewController: UITableViewController {
     
     var selectedIndex = 0
     var disciplines = [Discipline]()
-    var selectionBlock: ((Int, String) -> Void)?
+    var selectionBlock: ((Int, Discipline) -> Void)?
     
     
     // MARK:- Life Cycle
@@ -71,7 +71,7 @@ class DisciplineSelectionViewController: UITableViewController {
     // MARK:- Actions
     
     @IBAction func didTouchButtonSelect(_ sender: UIBarButtonItem) {
-        self.selectionBlock?(self.selectedIndex, self.disciplines[self.selectedIndex].name)
+        self.selectionBlock?(self.selectedIndex, self.disciplines[self.selectedIndex].clone())
         self.navigationController?.popViewController(animated: true)
     }
 

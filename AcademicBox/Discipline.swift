@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseDatabase
+import SwiftyJSON
 
 class Discipline {
     
@@ -47,6 +48,10 @@ class Discipline {
         self.name = name
     }
     
+    init(json: JSON) {
+        self.name = json["name"].stringValue
+        self.professor = Professor(name: json["professor"]["name"].stringValue, bio: "")
+    }
     
     static func saveDisciplines() {
         let disciplines = Discipline.disciplines
@@ -57,11 +62,21 @@ class Discipline {
     }
     
     func toJson() -> [String: Any] {
+        let professor: [String: Any] = [
+            "id": self.professor?.name.snakerized ?? "",
+            "name": self.professor?.name ?? ""
+        ]
         let json: [String: Any] = [
             "name": self.name,
-            "professor": self.professor?.name.snakerized ?? ""
+            "professor": professor
         ]
         return json
+    }
+    
+    func clone() -> Discipline {
+        let d = Discipline(name: self.name)
+        d.professor = Professor(name: self.professor?.name ?? "", bio: self.professor?.bio ?? "")
+        return d
     }
     
 }

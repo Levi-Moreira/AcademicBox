@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseAuth
 import FirebaseDatabase
+import SwiftyJSON
 
 class AppUser: NSObject {
 
@@ -65,10 +66,17 @@ class AppUser: NSObject {
     }
     
     func saveDisciplines() {
-        var disciplinesJson = [String: String]()
+        var disciplinesJson = [String: Any]()
         let userJson: [String: Any] = ["\(self.id)": true]
         for discipline in disciplines {
-            disciplinesJson.updateValue(discipline.name, forKey: discipline.name.snakerized)
+            let professor: [String: Any] = [
+                "name": discipline.professor?.name ?? ""
+            ]
+            let json: [String: Any] = [
+                "name": discipline.name,
+                "professor": professor
+            ]
+            disciplinesJson[discipline.name.snakerized] = json
             discipline.usersReference.updateChildValues(userJson)
         }
         let json: [String: Any] = ["\(AppUser.kReferenceDisciplinesName)": disciplinesJson]
@@ -84,8 +92,11 @@ class AppUser: NSObject {
         reference.observe(.value, with: { (snapshot) in
             
             var disciplines = [Discipline]()
-            if let values = snapshot.value as? [String: String] {
-                values.forEach { disciplines.append(Discipline(name: $1)) }
+            if let values = snapshot.value as? [String: Any] {
+                let json = JSON(values)
+                for (_, j) in json.makeIterator() {
+                    disciplines.append(Discipline(json: j))
+                }
                 completionBlock(disciplines)
             }
             

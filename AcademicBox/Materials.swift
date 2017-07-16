@@ -41,6 +41,9 @@ class Materials: NSObject {
         self.user.id = json["user"]["id"].stringValue
         self.user.email = json["user"]["email"].stringValue
         self.discipline.name = json["discipline"]["name"].stringValue
+        self.discipline.professor = Professor(
+            name: json["discipline"]["professor"]["name"].stringValue,
+            bio: json["discipline"]["professor"]["bio"].stringValue)
         self.date = json["date"].stringValue.date
     }
     
@@ -150,9 +153,13 @@ class Materials: NSObject {
     }
     
     func toJson() -> [String: Any] {
+        let professor: [String: Any] = [
+            "name": self.discipline.professor?.name ?? ""
+        ]
         let discipline: [String: Any] = [
             "id": self.discipline.name.snakerized,
-            "name": self.discipline.name
+            "name": self.discipline.name,
+            "professor": professor
         ]
         let userDict: [String: Any] = [
             "id": self.user.id,
