@@ -54,6 +54,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 return
             }
             
+            self?.materials.removeAll()
             self?.materials.append(contentsOf: materials)
             self?.tableView.reloadData()
             
