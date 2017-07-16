@@ -160,14 +160,14 @@ class UploadFilesViewController: UITableViewController, UIImagePickerControllerD
         self.material.upload { [weak self] error in
             
             if let _ = error {
-                // TODO Display the error
+                self?.presentUnknownError(completion: nil)
                 return
             }
             
             if shouldUploadImages {
                 self?.uploadMaterialImages()
             } else {
-                self?.didFinishUploadingImages()
+                self?.didFinishUploadingMaterials()
             }
             
         }
@@ -201,21 +201,23 @@ class UploadFilesViewController: UITableViewController, UIImagePickerControllerD
                 self?.didFinishUploadingImages()
             }
             
-            print("Image \(image.path) uploaded")
-            
         }
     }
     
     private func didFinishUploadingImages() {
         if !self.imageUploadError {
-            print("All images have been successfully uploaded")
-            self.material.updateImagesReferences()
-            self.presentSuccessAlert(withMessage: "Material successfully uploaded", completion: {
-                self.dismiss(animated: true, completion: nil)
+            self.material.updateImagesReferences(completion: { error in
+                self.didFinishUploadingMaterials()
             })
         } else {
             self.presentErrorAlert(withMessage: "An error ocurred.", completion: nil)
         }
+    }
+    
+    private func didFinishUploadingMaterials() {
+        self.presentSuccessAlert(withMessage: "Material successfully uploaded", completion: {
+            self.dismiss(animated: true, completion: nil)
+        })
     }
     
     

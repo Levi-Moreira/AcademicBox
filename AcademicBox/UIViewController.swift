@@ -27,4 +27,8 @@ extension UIViewController {
         self.presentAlert(withTitle: "Error", message: message, completion: completion)
     }
     
+    func presentUnknownError(completion: (() -> Void)?) {
+        self.presentErrorAlert(withMessage: "An error has ocurred, please try again later", completion: completion)
+    }
+    
 }

@@ -110,7 +110,7 @@ class Materials: NSObject {
         }
     }
     
-    func updateImagesReferences() {
+    func updateImagesReferences(completion: @escaping (Error?) -> Void) {
         
         if self.key.isEmpty { return }
         
@@ -121,10 +121,11 @@ class Materials: NSObject {
         Materials.reference.child(self.key).updateChildValues(dict) { (error, reference) in
             
             if let _ = error {
+                completion(error)
                 return
             }
             
-            print(reference)
+            completion(nil)
             
         }
         
