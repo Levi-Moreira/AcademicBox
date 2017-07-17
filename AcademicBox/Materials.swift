@@ -49,7 +49,7 @@ class Materials: NSObject {
     
     static func all(completionBlock: @escaping ([Materials]?) -> Void) {
         
-        Materials.reference.observe(.value, with: { (snapshot) in
+        Materials.reference.queryOrdered(byChild: "valhalla").observe(.value, with: { (snapshot) in
             
             if let value = snapshot.value {
                 
@@ -62,6 +62,8 @@ class Materials: NSObject {
                     print(material)
                     materials.append(material)
                 }
+                
+                materials.sort { $0.name < $1.name }
                 
                 completionBlock(materials)
                 

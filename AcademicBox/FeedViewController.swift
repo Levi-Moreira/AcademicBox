@@ -35,8 +35,11 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         Professor.saveProfessors()
         Discipline.saveDisciplines()
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.loadMaterials()
-        
     }
     
     func setupView() {
@@ -48,8 +51,12 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func loadMaterials() {
+        
+        self.showLoader()
+        
         Materials.all { [weak self] materials in
             
+            self?.hideLoader()
             
             guard let materials = materials else {
                 self?.presentUnknownError(completion: nil)
