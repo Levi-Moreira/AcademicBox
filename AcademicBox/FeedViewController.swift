@@ -35,11 +35,13 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         Professor.saveProfessors()
         Discipline.saveDisciplines()
         
+        self.loadMaterials()
+
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.loadMaterials()
     }
     
     func setupView() {
